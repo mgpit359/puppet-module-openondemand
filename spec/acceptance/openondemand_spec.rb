@@ -6,7 +6,10 @@ describe 'openondemand class:' do
   context 'with default parameters' do
     it 'runs successfully' do
       pp = <<-PP
-      class { 'openondemand': }
+      class { 'openondemand':
+        #TODO: Uncomment once latest repo has RPMs that support --insecure
+        #generator_insecure => true,
+      }
       PP
 
       apply_manifest(pp, catch_failures: true)
@@ -18,8 +21,10 @@ describe 'openondemand class:' do
     it 'runs successfully' do
       pp = <<-PP
       class { 'openondemand':
+        repo_release            => '2.0',
         repo_nightly            => true,
         ondemand_package_ensure => 'latest',
+        generator_insecure      => true,
       }
       PP
 
