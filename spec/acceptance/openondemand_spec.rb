@@ -7,8 +7,7 @@ describe 'openondemand class:' do
     it 'runs successfully' do
       pp = <<-PP
       class { 'openondemand':
-        #TODO: Uncomment once latest repo has RPMs that support --insecure
-        #generator_insecure => true,
+        generator_insecure => true,
       }
       PP
 
