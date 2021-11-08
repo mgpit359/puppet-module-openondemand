@@ -212,17 +212,20 @@ class openondemand::config {
   } else {
     $insecure_arg = ''
   }
+  $generate = "/opt/ood/ood-portal-generator/bin/generate -o /etc/ood/config/ood-portal.conf -d /etc/ood/dex/config.yaml${insecure_arg}"
   exec { 'ood-portal-generator-generate':
     path        => '/usr/bin:/bin:/usr/sbin:/sbin',
     command     => $generate,
     refreshonly => true,
+    logoutput   => true,
     before      => ::Apache::Custom_config['ood-portal'],
   }
   exec { 'ood-portal-generator-generate-refresh':
-    path    => '/usr/bin:/bin:/usr/sbin:/sbin',
-    command => "/opt/ood/ood-portal-generator/bin/generate -o /etc/ood/config/ood-portal.conf -d /etc/ood/dex/config.yaml ${insecure_arg}",
-    creates => '/etc/ood/config/ood-portal.conf',
-    before  => ::Apache::Custom_config['ood-portal'],
+    path      => '/usr/bin:/bin:/usr/sbin:/sbin',
+    command   => $generate,
+    creates   => '/etc/ood/config/ood-portal.conf',
+    logoutput => true,
+    before    => ::Apache::Custom_config['ood-portal'],
   }
 
   include apache
