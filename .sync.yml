@@ -1,4 +1,7 @@
 ---
+Rakefile:
+  changelog_since_tag: v1.5.0
+  changelog_max_issues: 1
 .github/workflows/ci.yaml:
   acceptance_matrix:
       set:

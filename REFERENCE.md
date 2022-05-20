@@ -167,7 +167,7 @@ Data type: `String`
 
 The release of OnDemand repo
 
-Default value: `'latest'`
+Default value: `'2.0'`
 
 ##### <a name="repo_baseurl_prefix"></a>`repo_baseurl_prefix`
 
