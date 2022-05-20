@@ -7,6 +7,8 @@ describe 'openondemand class:' do
     it 'runs successfully' do
       pp = <<-PP
       class { 'openondemand':
+        #TODO: Remove repo_release once 2.1 repo exists
+        repo_release       => 'latest',
         generator_insecure => true,
       }
       PP
@@ -20,6 +22,8 @@ describe 'openondemand class:' do
     it 'runs successfully' do
       pp = <<-PP
       class { 'openondemand':
+        #TODO: Remove repo_release once 2.1 repo exists
+        repo_release            => 'latest',
         repo_nightly            => true,
         ondemand_package_ensure => 'latest',
         generator_insecure      => true,

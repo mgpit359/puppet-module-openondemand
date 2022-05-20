@@ -224,7 +224,7 @@
 #
 class openondemand (
   # repos
-  String $repo_release = '2.0',
+  String $repo_release = '2.1',
   Variant[Stdlib::HTTPSUrl, Stdlib::HTTPUrl]
     $repo_baseurl_prefix = 'https://yum.osc.edu/ondemand',
   Variant[Stdlib::HTTPSUrl, Stdlib::HTTPUrl, Stdlib::Absolutepath]
