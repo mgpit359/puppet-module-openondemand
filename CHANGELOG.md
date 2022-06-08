@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
+## [v2.12.1](https://github.com/osc/puppet-module-openondemand/tree/v2.12.1) (2022-06-08)
+
+[Full Changelog](https://github.com/osc/puppet-module-openondemand/compare/v2.12.0...v2.12.1)
+
+### Fixed
+
+- Allow arbitrary string for auth\_type [\#97](https://github.com/OSC/puppet-module-openondemand/pull/97) ([mattmix](https://github.com/mattmix))
+
 ## [v2.12.0](https://github.com/osc/puppet-module-openondemand/tree/v2.12.0) (2022-05-20)
 
 [Full Changelog](https://github.com/osc/puppet-module-openondemand/compare/v2.11.0...v2.12.0)

@@ -411,7 +411,7 @@ Default value: ``undef``
 
 ##### <a name="auth_type"></a>`auth_type`
 
-Data type: `Enum['CAS', 'openid-connect', 'shibboleth', 'dex']`
+Data type: `Variant[Enum['CAS', 'openid-connect', 'shibboleth', 'dex'], String[1]]`
 
 ood_portal.yml auth_type
 
