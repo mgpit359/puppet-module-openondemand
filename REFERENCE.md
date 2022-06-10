@@ -1918,8 +1918,14 @@ Alias of
 
 ```puppet
 Struct[{
-  Optional['basic']     => Struct[{'script_wrapper' => String}],
-  Optional['vnc']       => Struct[{'script_wrapper' => String}],
+  Optional['basic']     => Struct[{
+        Optional['script_wrapper'] => String,
+        Optional['set_host'] => String
+    }],
+  Optional['vnc']       => Struct[{
+        Optional['script_wrapper'] => String,
+        Optional['set_host'] => String
+    }],
   Optional['ssh_allow'] => Boolean,
 }]
 ```
