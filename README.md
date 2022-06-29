@@ -327,6 +327,7 @@ openondemand::confs:
 This module has been tested on:
 
 * RedHat/CentOS 7 x86_64
-* RedHat/Rocky 8 x86_64
+* RedHat/Rocky Linux/Alma Linux 8 x86_64
+* RedHat/Rocky Linux/Alma Linux 9 x86_64
 * Ubuntu 18.04 x86_64
 * Ubuntu 20.04 x86_64
