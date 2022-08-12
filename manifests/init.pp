@@ -359,18 +359,13 @@ class openondemand (
 ) {
 
   $osfamily = $facts.dig('os', 'family')
-  $_os_release_major = $facts.dig('os', 'release', 'major')
+  $osname = $facts.dig('os', 'name')
+  $osmajor = $facts.dig('os', 'release', 'major')
 
-  if $_os_release_major {
-    $osmajor = split($_os_release_major, '[.]')[0]
-  } else {
-    $osmajor = 'Unknown'
-  }
-
-  $supported = ['RedHat-7','RedHat-8']
+  $supported = ['RedHat-7','RedHat-8','Debian-18.04','Debian-20.04']
   $os = "${osfamily}-${osmajor}"
   if ! ($os in $supported) {
-    fail("Unsupported OS: module ${module_name} only supports RedHat 7 and 8. '${os}' detected")
+    fail("Unsupported OS: module ${module_name}. osfamily=${osfamily} osmajor=${osmajor} detected")
   }
 
   if versioncmp($osmajor, '7') <= 0 {
@@ -385,8 +380,13 @@ class openondemand (
     $selinux_package_ensure = 'absent'
   }
 
-  $repo_baseurl = "${repo_baseurl_prefix}/${repo_release}/web/el${osmajor}/\$basearch"
-  $repo_nightly_baseurl = "${repo_baseurl_prefix}/nightly/web/el${osmajor}/\$basearch"
+  if $osfamily == 'RedHat' {
+    $repo_baseurl = "${repo_baseurl_prefix}/${repo_release}/web/el${osmajor}/\$basearch"
+    $repo_nightly_baseurl = "${repo_baseurl_prefix}/nightly/web/el${osmajor}/\$basearch"
+  } elsif $osfamily == 'Debian' {
+    $repo_baseurl = "${repo_baseurl_prefix}/${repo_release}/web/apt"
+    $repo_nightly_baseurl = "${repo_baseurl_prefix}/nightly/web/apt"
+  }
 
   if $ssl {
     $port = '443'
@@ -396,6 +396,12 @@ class openondemand (
     $port = '80'
     $listen_ports = ['80']
     $protocol = 'http'
+  }
+
+  if $repo_nightly {
+    $nightly_ensure = 'present'
+  } else {
+    $nightly_ensure = 'absent'
   }
 
   $nginx_stage_cmd = '/opt/ood/nginx_stage/sbin/nginx_stage'
@@ -515,17 +521,25 @@ class openondemand (
     'dashboard_layout' => $dashboard_layout,
   }.filter |$key, $value| { $value =~ NotUndef }
 
-  contain openondemand::repo
+  if $osfamily == 'RedHat' {
+    contain openondemand::repo::rpm
+    Class['openondemand::repo::rpm'] -> Class['openondemand::install']
+  } elsif $osfamily == 'Debian' {
+    contain openondemand::repo::apt
+    Class['openondemand::repo::apt'] -> Class['openondemand::install']
+  }
   contain openondemand::install
   contain openondemand::apache
   contain openondemand::config
   contain openondemand::service
 
-  Class['openondemand::repo']
-  ->Class['openondemand::install']
+  Class['openondemand::install']
   ->Class['openondemand::apache']
   ->Class['openondemand::config']
   ->Class['openondemand::service']
+
+  Class['openondemand::install'] -> Class['apache']
+  Class['openondemand::install'] -> Apache::Mod <| |>
 
   $_clusters.each |$name, $cluster| {
     openondemand::cluster { $name: * => $cluster }
