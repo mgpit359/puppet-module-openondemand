@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
+## [v2.14.0](https://github.com/osc/puppet-module-openondemand/tree/v2.14.0) (2022-08-12)
+
+[Full Changelog](https://github.com/osc/puppet-module-openondemand/compare/v2.13.0...v2.14.0)
+
+### Added
+
+- Add dex\_uri parameter [\#109](https://github.com/OSC/puppet-module-openondemand/pull/109) ([treydock](https://github.com/treydock))
+- Support Ubuntu 18.04 and 20.04 [\#103](https://github.com/OSC/puppet-module-openondemand/pull/103) ([treydock](https://github.com/treydock))
+
 ## [v2.13.0](https://github.com/osc/puppet-module-openondemand/tree/v2.13.0) (2022-06-10)
 
 [Full Changelog](https://github.com/osc/puppet-module-openondemand/compare/v2.12.1...v2.13.0)

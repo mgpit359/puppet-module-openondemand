@@ -15,7 +15,8 @@
 * `openondemand::apache`: Manage Open OnDemand Apache
 * `openondemand::config`: Manage Open OnDemand configs
 * `openondemand::install`: Manage Open OnDemand install
-* `openondemand::repo`: Manage Open OnDemand repos
+* `openondemand::repo::apt`: Manage Open OnDemand APT repos
+* `openondemand::repo::rpm`: Manage Open OnDemand RPM repos
 * `openondemand::service`: Manage Open OnDemand service
 
 ### Defined types
@@ -116,6 +117,7 @@ The following parameters are available in the `openondemand` class:
 * [`oidc_session_max_duration`](#oidc_session_max_duration)
 * [`oidc_state_max_number_of_cookies`](#oidc_state_max_number_of_cookies)
 * [`oidc_settings`](#oidc_settings)
+* [`dex_uri`](#dex_uri)
 * [`dex_config`](#dex_config)
 * [`web_directory`](#web_directory)
 * [`nginx_log_group`](#nginx_log_group)
@@ -656,6 +658,14 @@ Data type: `Hash`
 Hash of OIDC settings passsed directly to Apache config
 
 Default value: `{}`
+
+##### <a name="dex_uri"></a>`dex_uri`
+
+Data type: `Optional[String[1]]`
+
+Dex URI if put behind Apache reverse proxy
+
+Default value: ``undef``
 
 ##### <a name="dex_config"></a>`dex_config`
 
