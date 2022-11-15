@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
+## [v2.15.0](https://github.com/osc/puppet-module-openondemand/tree/v2.15.0) (2022-11-15)
+
+[Full Changelog](https://github.com/osc/puppet-module-openondemand/compare/v2.14.0...v2.15.0)
+
+### Added
+
+- Use NodeJS 14 [\#115](https://github.com/OSC/puppet-module-openondemand/pull/115) ([treydock](https://github.com/treydock))
+
 ## [v2.14.0](https://github.com/osc/puppet-module-openondemand/tree/v2.14.0) (2022-08-12)
 
 [Full Changelog](https://github.com/osc/puppet-module-openondemand/compare/v2.13.0...v2.14.0)
