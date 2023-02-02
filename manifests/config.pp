@@ -249,7 +249,7 @@ class openondemand::config {
     $apache_custom_config_verify = true
   }
   if $apache::params::verify_command =~ Array {
-    $apache_verify_command = $apache::params::verify_command[0]
+    $apache_verify_command = join($apache::params::verify_command, ' ')
   } else {
     $apache_verify_command = $apache::params::verify_command
   }
