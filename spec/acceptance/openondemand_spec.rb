@@ -6,7 +6,9 @@ describe 'openondemand class:' do
   context 'with default parameters' do
     it 'runs successfully' do
       pp = <<-PP
-      class { 'openondemand': }
+      class { 'openondemand':
+        generator_insecure => true,
+      }
       PP
 
       apply_manifest(pp, catch_failures: true)
@@ -14,12 +16,13 @@ describe 'openondemand class:' do
     end
   end
 
-  context 'with nightly repo', skip: true do
+  context 'with nightly repo' do
     it 'runs successfully' do
       pp = <<-PP
       class { 'openondemand':
         repo_nightly            => true,
         ondemand_package_ensure => 'latest',
+        generator_insecure      => true,
       }
       PP
 

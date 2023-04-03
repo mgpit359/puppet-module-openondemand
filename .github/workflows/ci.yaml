@@ -6,6 +6,8 @@ on:
       - main
       - master
   pull_request:
+  schedule:
+    - cron: '0 6 * * 1'
 
 
 jobs:
@@ -51,8 +53,9 @@ jobs:
         set:
           - "el7"
           - "el8"
-          - "ubuntu-1804"
+          - "el9"
           - "ubuntu-2004"
+          - "ubuntu-2204"
         puppet:
           - "puppet6"
           - "puppet7"
@@ -70,6 +73,7 @@ jobs:
         run: |
             set -x
             sudo apt-get remove mysql-server --purge
+            sudo apt-get update
             sudo apt-get install apparmor-profiles
             sudo apparmor_parser -R /etc/apparmor.d/usr.sbin.mysqld
       - uses: actions/checkout@v2
