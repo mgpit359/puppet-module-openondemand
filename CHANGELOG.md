@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
+## [v3.0.1](https://github.com/osc/puppet-module-openondemand/tree/v3.0.1) (2023-04-14)
+
+[Full Changelog](https://github.com/osc/puppet-module-openondemand/compare/v3.0.0...v3.0.1)
+
+### Fixed
+
+- Fixed boolean check for boolean parameter [\#121](https://github.com/OSC/puppet-module-openondemand/pull/121) ([abujeda](https://github.com/abujeda))
+
 ## [v3.0.0](https://github.com/osc/puppet-module-openondemand/tree/v3.0.0) (2023-04-03)
 
 [Full Changelog](https://github.com/osc/puppet-module-openondemand/compare/v2.15.0...v3.0.0)
