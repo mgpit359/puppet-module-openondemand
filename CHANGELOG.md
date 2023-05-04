@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
+## [v4.0.0](https://github.com/osc/puppet-module-openondemand/tree/v4.0.0) (2023-05-04)
+
+[Full Changelog](https://github.com/osc/puppet-module-openondemand/compare/v3.0.1...v4.0.0)
+
+### Changed
+
+- Support Puppet 8, Drop Puppet 6 support, update dependencies [\#125](https://github.com/OSC/puppet-module-openondemand/pull/125) ([treydock](https://github.com/treydock))
+
+### Added
+
+- Adding proxy for ondemand repo. [\#124](https://github.com/OSC/puppet-module-openondemand/pull/124) ([pedmon](https://github.com/pedmon))
+
 ## [v3.0.1](https://github.com/osc/puppet-module-openondemand/tree/v3.0.1) (2023-04-14)
 
 [Full Changelog](https://github.com/osc/puppet-module-openondemand/compare/v3.0.0...v3.0.1)

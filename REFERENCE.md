@@ -193,11 +193,11 @@ Default value: `'https://yum.osc.edu/ondemand/RPM-GPG-KEY-ondemand-SHA512'`
 
 ##### <a name="repo_proxy"></a>`repo_proxy`
 
-Data type: `String`
+Data type: `Optional[String[1]]`
 
-The URL for OnDemand repo proxy
+The URL for proxy for OnDemand repo
 
-Default value: `'_none_'`
+Default value: ``undef``
 
 ##### <a name="repo_priority"></a>`repo_priority`
 
