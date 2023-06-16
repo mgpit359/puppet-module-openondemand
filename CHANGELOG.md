@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
+## [v4.1.0](https://github.com/osc/puppet-module-openondemand/tree/v4.1.0) (2023-06-16)
+
+[Full Changelog](https://github.com/osc/puppet-module-openondemand/compare/v4.0.0...v4.1.0)
+
+### Added
+
+- Support newer stdlib and systemd modules [\#131](https://github.com/OSC/puppet-module-openondemand/pull/131) ([treydock](https://github.com/treydock))
+- Allow apps to be installed from source parameter [\#130](https://github.com/OSC/puppet-module-openondemand/pull/130) ([treydock](https://github.com/treydock))
+- Document adding support ticket configuration [\#126](https://github.com/OSC/puppet-module-openondemand/pull/126) ([treydock](https://github.com/treydock))
+
+### Fixed
+
+- Set mode for managed directories [\#132](https://github.com/OSC/puppet-module-openondemand/pull/132) ([treydock](https://github.com/treydock))
+
 ## [v4.0.0](https://github.com/osc/puppet-module-openondemand/tree/v4.0.0) (2023-05-04)
 
 [Full Changelog](https://github.com/osc/puppet-module-openondemand/compare/v3.0.1...v4.0.0)

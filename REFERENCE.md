@@ -21,23 +21,23 @@
 
 ### Defined types
 
-* [`openondemand::app::dev`](#openondemandappdev): Manage Open OnDemand dev app
-* [`openondemand::app::usr`](#openondemandappusr): Manage Open OnDemand user app
-* [`openondemand::cluster`](#openondemandcluster): Manage Open OnDemand cluster definition
-* [`openondemand::conf`](#openondemandconf): Manage Open OnDemand configuration file in /etc/ood/config/ondemand.d
-* [`openondemand::install::app`](#openondemandinstallapp): Manage Open OnDemand app
+* [`openondemand::app::dev`](#openondemand--app--dev): Manage Open OnDemand dev app
+* [`openondemand::app::usr`](#openondemand--app--usr): Manage Open OnDemand user app
+* [`openondemand::cluster`](#openondemand--cluster): Manage Open OnDemand cluster definition
+* [`openondemand::conf`](#openondemand--conf): Manage Open OnDemand configuration file in /etc/ood/config/ondemand.d
+* [`openondemand::install::app`](#openondemand--install--app): Manage Open OnDemand app
 
 ### Data types
 
-* [`Openondemand::Acl`](#openondemandacl): OnDemand cluster ACL
-* [`Openondemand::Batch_connect`](#openondemandbatch_connect): Defines cluster config batch_connect values
-* [`Openondemand::Dashboard_layout`](#openondemanddashboard_layout): Dashboard layout
-* [`Openondemand::Dashboard_layout_column`](#openondemanddashboard_layout_column): Dashboard layout column
-* [`Openondemand::Dex_config`](#openondemanddex_config): ondemand-dex config
-* [`Openondemand::K8_auth`](#openondemandk8_auth): OnDemand cluster Kubernetes auth
-* [`Openondemand::K8_mount`](#openondemandk8_mount): OnDemand cluster Kubernetes mount
-* [`Openondemand::K8_server`](#openondemandk8_server): OnDemand cluster Kubernetes mount
-* [`Openondemand::Nginx_stage_namespace_config`](#openondemandnginx_stage_namespace_config): nginx_stage.yml namespace_config
+* [`Openondemand::Acl`](#Openondemand--Acl): OnDemand cluster ACL
+* [`Openondemand::Batch_connect`](#Openondemand--Batch_connect): Defines cluster config batch_connect values
+* [`Openondemand::Dashboard_layout`](#Openondemand--Dashboard_layout): Dashboard layout
+* [`Openondemand::Dashboard_layout_column`](#Openondemand--Dashboard_layout_column): Dashboard layout column
+* [`Openondemand::Dex_config`](#Openondemand--Dex_config): ondemand-dex config
+* [`Openondemand::K8_auth`](#Openondemand--K8_auth): OnDemand cluster Kubernetes auth
+* [`Openondemand::K8_mount`](#Openondemand--K8_mount): OnDemand cluster Kubernetes mount
+* [`Openondemand::K8_server`](#Openondemand--K8_server): OnDemand cluster Kubernetes mount
+* [`Openondemand::Nginx_stage_namespace_config`](#Openondemand--Nginx_stage_namespace_config): nginx_stage.yml namespace_config
 
 ### Tasks
 
@@ -55,119 +55,119 @@ Manage Open OnDemand
 
 The following parameters are available in the `openondemand` class:
 
-* [`repo_release`](#repo_release)
-* [`repo_baseurl_prefix`](#repo_baseurl_prefix)
-* [`repo_gpgkey`](#repo_gpgkey)
-* [`repo_proxy`](#repo_proxy)
-* [`repo_priority`](#repo_priority)
-* [`repo_exclude`](#repo_exclude)
-* [`manage_dependency_repos`](#manage_dependency_repos)
-* [`manage_epel`](#manage_epel)
-* [`repo_nightly`](#repo_nightly)
-* [`selinux`](#selinux)
-* [`ondemand_package_ensure`](#ondemand_package_ensure)
-* [`ondemand_dex_package_ensure`](#ondemand_dex_package_ensure)
-* [`mod_auth_openidc_ensure`](#mod_auth_openidc_ensure)
-* [`install_apps`](#install_apps)
-* [`declare_apache`](#declare_apache)
-* [`apache_scls`](#apache_scls)
-* [`generator_insecure`](#generator_insecure)
-* [`listen_addr_port`](#listen_addr_port)
-* [`servername`](#servername)
-* [`server_aliases`](#server_aliases)
-* [`ssl`](#ssl)
-* [`logroot`](#logroot)
-* [`use_rewrites`](#use_rewrites)
-* [`use_maintenance`](#use_maintenance)
-* [`maintenance_ip_allowlist`](#maintenance_ip_allowlist)
-* [`maintenance_source`](#maintenance_source)
-* [`maintenance_content`](#maintenance_content)
-* [`security_csp_frame_ancestors`](#security_csp_frame_ancestors)
-* [`security_strict_transport`](#security_strict_transport)
-* [`lua_root`](#lua_root)
-* [`lua_log_level`](#lua_log_level)
-* [`user_map_match`](#user_map_match)
-* [`user_map_cmd`](#user_map_cmd)
-* [`user_env`](#user_env)
-* [`map_fail_uri`](#map_fail_uri)
-* [`auth_type`](#auth_type)
-* [`auth_configs`](#auth_configs)
-* [`root_uri`](#root_uri)
-* [`analytics`](#analytics)
-* [`public_uri`](#public_uri)
-* [`public_root`](#public_root)
-* [`logout_uri`](#logout_uri)
-* [`logout_redirect`](#logout_redirect)
-* [`host_regex`](#host_regex)
-* [`node_uri`](#node_uri)
-* [`rnode_uri`](#rnode_uri)
-* [`nginx_uri`](#nginx_uri)
-* [`pun_uri`](#pun_uri)
-* [`pun_socket_root`](#pun_socket_root)
-* [`pun_max_retries`](#pun_max_retries)
-* [`pun_pre_hook_root_cmd`](#pun_pre_hook_root_cmd)
-* [`pun_pre_hook_exports`](#pun_pre_hook_exports)
-* [`oidc_uri`](#oidc_uri)
-* [`oidc_discover_uri`](#oidc_discover_uri)
-* [`oidc_discover_root`](#oidc_discover_root)
-* [`register_uri`](#register_uri)
-* [`register_root`](#register_root)
-* [`oidc_provider_metadata_url`](#oidc_provider_metadata_url)
-* [`oidc_client_id`](#oidc_client_id)
-* [`oidc_client_secret`](#oidc_client_secret)
-* [`oidc_remote_user_claim`](#oidc_remote_user_claim)
-* [`oidc_scope`](#oidc_scope)
-* [`oidc_session_inactivity_timeout`](#oidc_session_inactivity_timeout)
-* [`oidc_session_max_duration`](#oidc_session_max_duration)
-* [`oidc_state_max_number_of_cookies`](#oidc_state_max_number_of_cookies)
-* [`oidc_settings`](#oidc_settings)
-* [`dex_uri`](#dex_uri)
-* [`dex_config`](#dex_config)
-* [`web_directory`](#web_directory)
-* [`nginx_log_group`](#nginx_log_group)
-* [`nginx_stage_clean_cron_schedule`](#nginx_stage_clean_cron_schedule)
-* [`nginx_stage_ondemand_portal`](#nginx_stage_ondemand_portal)
-* [`nginx_stage_ondemand_title`](#nginx_stage_ondemand_title)
-* [`nginx_stage_pun_custom_env`](#nginx_stage_pun_custom_env)
-* [`nginx_stage_app_root`](#nginx_stage_app_root)
-* [`nginx_stage_scl_env`](#nginx_stage_scl_env)
-* [`nginx_stage_app_request_regex`](#nginx_stage_app_request_regex)
-* [`nginx_stage_min_uid`](#nginx_stage_min_uid)
-* [`nginx_stage_passenger_pool_idle_time`](#nginx_stage_passenger_pool_idle_time)
-* [`nginx_stage_passenger_options`](#nginx_stage_passenger_options)
-* [`nginx_stage_nginx_file_upload_max`](#nginx_stage_nginx_file_upload_max)
-* [`nginx_stage_configs`](#nginx_stage_configs)
-* [`config_dir_purge`](#config_dir_purge)
-* [`config_source`](#config_source)
-* [`config_content`](#config_content)
-* [`confs`](#confs)
-* [`pinned_apps`](#pinned_apps)
-* [`pinned_apps_menu_length`](#pinned_apps_menu_length)
-* [`pinned_apps_group_by`](#pinned_apps_group_by)
-* [`dashboard_layout`](#dashboard_layout)
-* [`hook_env`](#hook_env)
-* [`hook_env_path`](#hook_env_path)
-* [`hook_env_config`](#hook_env_config)
-* [`kubectl_path`](#kubectl_path)
-* [`clusters`](#clusters)
-* [`clusters_hiera_merge`](#clusters_hiera_merge)
-* [`usr_apps`](#usr_apps)
-* [`usr_app_defaults`](#usr_app_defaults)
-* [`dev_apps`](#dev_apps)
-* [`dev_app_users`](#dev_app_users)
-* [`dev_app_defaults`](#dev_app_defaults)
-* [`apps_config_repo`](#apps_config_repo)
-* [`apps_config_revision`](#apps_config_revision)
-* [`apps_config_repo_path`](#apps_config_repo_path)
-* [`locales_config_repo_path`](#locales_config_repo_path)
-* [`announcements_config_repo_path`](#announcements_config_repo_path)
-* [`apps_config_source`](#apps_config_source)
-* [`locales_config_source`](#locales_config_source)
-* [`announcements_config_source`](#announcements_config_source)
-* [`public_files_repo_paths`](#public_files_repo_paths)
-* [`manage_logrotate`](#manage_logrotate)
+* [`repo_release`](#-openondemand--repo_release)
+* [`repo_baseurl_prefix`](#-openondemand--repo_baseurl_prefix)
+* [`repo_gpgkey`](#-openondemand--repo_gpgkey)
+* [`repo_proxy`](#-openondemand--repo_proxy)
+* [`repo_priority`](#-openondemand--repo_priority)
+* [`repo_exclude`](#-openondemand--repo_exclude)
+* [`manage_dependency_repos`](#-openondemand--manage_dependency_repos)
+* [`manage_epel`](#-openondemand--manage_epel)
+* [`repo_nightly`](#-openondemand--repo_nightly)
+* [`selinux`](#-openondemand--selinux)
+* [`ondemand_package_ensure`](#-openondemand--ondemand_package_ensure)
+* [`ondemand_dex_package_ensure`](#-openondemand--ondemand_dex_package_ensure)
+* [`mod_auth_openidc_ensure`](#-openondemand--mod_auth_openidc_ensure)
+* [`install_apps`](#-openondemand--install_apps)
+* [`declare_apache`](#-openondemand--declare_apache)
+* [`apache_scls`](#-openondemand--apache_scls)
+* [`generator_insecure`](#-openondemand--generator_insecure)
+* [`listen_addr_port`](#-openondemand--listen_addr_port)
+* [`servername`](#-openondemand--servername)
+* [`server_aliases`](#-openondemand--server_aliases)
+* [`ssl`](#-openondemand--ssl)
+* [`logroot`](#-openondemand--logroot)
+* [`use_rewrites`](#-openondemand--use_rewrites)
+* [`use_maintenance`](#-openondemand--use_maintenance)
+* [`maintenance_ip_allowlist`](#-openondemand--maintenance_ip_allowlist)
+* [`maintenance_source`](#-openondemand--maintenance_source)
+* [`maintenance_content`](#-openondemand--maintenance_content)
+* [`security_csp_frame_ancestors`](#-openondemand--security_csp_frame_ancestors)
+* [`security_strict_transport`](#-openondemand--security_strict_transport)
+* [`lua_root`](#-openondemand--lua_root)
+* [`lua_log_level`](#-openondemand--lua_log_level)
+* [`user_map_match`](#-openondemand--user_map_match)
+* [`user_map_cmd`](#-openondemand--user_map_cmd)
+* [`user_env`](#-openondemand--user_env)
+* [`map_fail_uri`](#-openondemand--map_fail_uri)
+* [`auth_type`](#-openondemand--auth_type)
+* [`auth_configs`](#-openondemand--auth_configs)
+* [`root_uri`](#-openondemand--root_uri)
+* [`analytics`](#-openondemand--analytics)
+* [`public_uri`](#-openondemand--public_uri)
+* [`public_root`](#-openondemand--public_root)
+* [`logout_uri`](#-openondemand--logout_uri)
+* [`logout_redirect`](#-openondemand--logout_redirect)
+* [`host_regex`](#-openondemand--host_regex)
+* [`node_uri`](#-openondemand--node_uri)
+* [`rnode_uri`](#-openondemand--rnode_uri)
+* [`nginx_uri`](#-openondemand--nginx_uri)
+* [`pun_uri`](#-openondemand--pun_uri)
+* [`pun_socket_root`](#-openondemand--pun_socket_root)
+* [`pun_max_retries`](#-openondemand--pun_max_retries)
+* [`pun_pre_hook_root_cmd`](#-openondemand--pun_pre_hook_root_cmd)
+* [`pun_pre_hook_exports`](#-openondemand--pun_pre_hook_exports)
+* [`oidc_uri`](#-openondemand--oidc_uri)
+* [`oidc_discover_uri`](#-openondemand--oidc_discover_uri)
+* [`oidc_discover_root`](#-openondemand--oidc_discover_root)
+* [`register_uri`](#-openondemand--register_uri)
+* [`register_root`](#-openondemand--register_root)
+* [`oidc_provider_metadata_url`](#-openondemand--oidc_provider_metadata_url)
+* [`oidc_client_id`](#-openondemand--oidc_client_id)
+* [`oidc_client_secret`](#-openondemand--oidc_client_secret)
+* [`oidc_remote_user_claim`](#-openondemand--oidc_remote_user_claim)
+* [`oidc_scope`](#-openondemand--oidc_scope)
+* [`oidc_session_inactivity_timeout`](#-openondemand--oidc_session_inactivity_timeout)
+* [`oidc_session_max_duration`](#-openondemand--oidc_session_max_duration)
+* [`oidc_state_max_number_of_cookies`](#-openondemand--oidc_state_max_number_of_cookies)
+* [`oidc_settings`](#-openondemand--oidc_settings)
+* [`dex_uri`](#-openondemand--dex_uri)
+* [`dex_config`](#-openondemand--dex_config)
+* [`web_directory`](#-openondemand--web_directory)
+* [`nginx_log_group`](#-openondemand--nginx_log_group)
+* [`nginx_stage_clean_cron_schedule`](#-openondemand--nginx_stage_clean_cron_schedule)
+* [`nginx_stage_ondemand_portal`](#-openondemand--nginx_stage_ondemand_portal)
+* [`nginx_stage_ondemand_title`](#-openondemand--nginx_stage_ondemand_title)
+* [`nginx_stage_pun_custom_env`](#-openondemand--nginx_stage_pun_custom_env)
+* [`nginx_stage_app_root`](#-openondemand--nginx_stage_app_root)
+* [`nginx_stage_scl_env`](#-openondemand--nginx_stage_scl_env)
+* [`nginx_stage_app_request_regex`](#-openondemand--nginx_stage_app_request_regex)
+* [`nginx_stage_min_uid`](#-openondemand--nginx_stage_min_uid)
+* [`nginx_stage_passenger_pool_idle_time`](#-openondemand--nginx_stage_passenger_pool_idle_time)
+* [`nginx_stage_passenger_options`](#-openondemand--nginx_stage_passenger_options)
+* [`nginx_stage_nginx_file_upload_max`](#-openondemand--nginx_stage_nginx_file_upload_max)
+* [`nginx_stage_configs`](#-openondemand--nginx_stage_configs)
+* [`config_dir_purge`](#-openondemand--config_dir_purge)
+* [`config_source`](#-openondemand--config_source)
+* [`config_content`](#-openondemand--config_content)
+* [`confs`](#-openondemand--confs)
+* [`pinned_apps`](#-openondemand--pinned_apps)
+* [`pinned_apps_menu_length`](#-openondemand--pinned_apps_menu_length)
+* [`pinned_apps_group_by`](#-openondemand--pinned_apps_group_by)
+* [`dashboard_layout`](#-openondemand--dashboard_layout)
+* [`hook_env`](#-openondemand--hook_env)
+* [`hook_env_path`](#-openondemand--hook_env_path)
+* [`hook_env_config`](#-openondemand--hook_env_config)
+* [`kubectl_path`](#-openondemand--kubectl_path)
+* [`clusters`](#-openondemand--clusters)
+* [`clusters_hiera_merge`](#-openondemand--clusters_hiera_merge)
+* [`usr_apps`](#-openondemand--usr_apps)
+* [`usr_app_defaults`](#-openondemand--usr_app_defaults)
+* [`dev_apps`](#-openondemand--dev_apps)
+* [`dev_app_users`](#-openondemand--dev_app_users)
+* [`dev_app_defaults`](#-openondemand--dev_app_defaults)
+* [`apps_config_repo`](#-openondemand--apps_config_repo)
+* [`apps_config_revision`](#-openondemand--apps_config_revision)
+* [`apps_config_repo_path`](#-openondemand--apps_config_repo_path)
+* [`locales_config_repo_path`](#-openondemand--locales_config_repo_path)
+* [`announcements_config_repo_path`](#-openondemand--announcements_config_repo_path)
+* [`apps_config_source`](#-openondemand--apps_config_source)
+* [`locales_config_source`](#-openondemand--locales_config_source)
+* [`announcements_config_source`](#-openondemand--announcements_config_source)
+* [`public_files_repo_paths`](#-openondemand--public_files_repo_paths)
+* [`manage_logrotate`](#-openondemand--manage_logrotate)
 
-##### <a name="repo_release"></a>`repo_release`
+##### <a name="-openondemand--repo_release"></a>`repo_release`
 
 Data type: `String`
 
@@ -175,7 +175,7 @@ The release of OnDemand repo
 
 Default value: `'3.0'`
 
-##### <a name="repo_baseurl_prefix"></a>`repo_baseurl_prefix`
+##### <a name="-openondemand--repo_baseurl_prefix"></a>`repo_baseurl_prefix`
 
 Data type: `Variant[Stdlib::HTTPSUrl, Stdlib::HTTPUrl]`
 
@@ -183,7 +183,7 @@ The baseurl prefix for OnDemand repo
 
 Default value: `'https://yum.osc.edu/ondemand'`
 
-##### <a name="repo_gpgkey"></a>`repo_gpgkey`
+##### <a name="-openondemand--repo_gpgkey"></a>`repo_gpgkey`
 
 Data type: `Variant[Stdlib::HTTPSUrl, Stdlib::HTTPUrl, Stdlib::Absolutepath]`
 
@@ -191,15 +191,15 @@ The URL for OnDemand repo GPG key
 
 Default value: `'https://yum.osc.edu/ondemand/RPM-GPG-KEY-ondemand-SHA512'`
 
-##### <a name="repo_proxy"></a>`repo_proxy`
+##### <a name="-openondemand--repo_proxy"></a>`repo_proxy`
 
 Data type: `Optional[String[1]]`
 
 The URL for proxy for OnDemand repo
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="repo_priority"></a>`repo_priority`
+##### <a name="-openondemand--repo_priority"></a>`repo_priority`
 
 Data type: `Integer[1,99]`
 
@@ -207,7 +207,7 @@ The priority of the OnDemand repo
 
 Default value: `99`
 
-##### <a name="repo_exclude"></a>`repo_exclude`
+##### <a name="-openondemand--repo_exclude"></a>`repo_exclude`
 
 Data type: `String`
 
@@ -215,39 +215,39 @@ Exclusion for OnDemand repo
 
 Default value: `'absent'`
 
-##### <a name="manage_dependency_repos"></a>`manage_dependency_repos`
+##### <a name="-openondemand--manage_dependency_repos"></a>`manage_dependency_repos`
 
 Data type: `Boolean`
 
 Boolean that determines if managing repos for package dependencies
 
-Default value: ``true``
+Default value: `true`
 
-##### <a name="manage_epel"></a>`manage_epel`
+##### <a name="-openondemand--manage_epel"></a>`manage_epel`
 
 Data type: `Boolean`
 
 Boolean that determines if managing EPEL repo
 
-Default value: ``true``
+Default value: `true`
 
-##### <a name="repo_nightly"></a>`repo_nightly`
+##### <a name="-openondemand--repo_nightly"></a>`repo_nightly`
 
 Data type: `Boolean`
 
 Add the OnDemand nightly repo
 
-Default value: ``false``
+Default value: `false`
 
-##### <a name="selinux"></a>`selinux`
+##### <a name="-openondemand--selinux"></a>`selinux`
 
 Data type: `Boolean`
 
 Boolean that determines if adding SELinux support
 
-Default value: ``false``
+Default value: `false`
 
-##### <a name="ondemand_package_ensure"></a>`ondemand_package_ensure`
+##### <a name="-openondemand--ondemand_package_ensure"></a>`ondemand_package_ensure`
 
 Data type: `String`
 
@@ -255,7 +255,7 @@ ondemand package ensure
 
 Default value: `'present'`
 
-##### <a name="ondemand_dex_package_ensure"></a>`ondemand_dex_package_ensure`
+##### <a name="-openondemand--ondemand_dex_package_ensure"></a>`ondemand_dex_package_ensure`
 
 Data type: `String`
 
@@ -263,7 +263,7 @@ ondemand-dex package ensure
 
 Default value: `'present'`
 
-##### <a name="mod_auth_openidc_ensure"></a>`mod_auth_openidc_ensure`
+##### <a name="-openondemand--mod_auth_openidc_ensure"></a>`mod_auth_openidc_ensure`
 
 Data type: `String`
 
@@ -271,7 +271,7 @@ mod_auth_openidc package ensure
 
 Default value: `'present'`
 
-##### <a name="install_apps"></a>`install_apps`
+##### <a name="-openondemand--install_apps"></a>`install_apps`
 
 Data type: `Hash`
 
@@ -279,15 +279,15 @@ Hash of apps to install, passed to ondemand::install::app
 
 Default value: `{}`
 
-##### <a name="declare_apache"></a>`declare_apache`
+##### <a name="-openondemand--declare_apache"></a>`declare_apache`
 
 Data type: `Boolean`
 
 Boolean that determines if apache is declared or included
 
-Default value: ``true``
+Default value: `true`
 
-##### <a name="apache_scls"></a>`apache_scls`
+##### <a name="-openondemand--apache_scls"></a>`apache_scls`
 
 Data type: `String`
 
@@ -295,7 +295,7 @@ SCLs to load when starting Apache service
 
 Default value: `'httpd24'`
 
-##### <a name="generator_insecure"></a>`generator_insecure`
+##### <a name="-openondemand--generator_insecure"></a>`generator_insecure`
 
 Data type: `Boolean`
 
@@ -303,41 +303,41 @@ Run ood-portal-generator with --insecure flag
 This is needed if you wish to use default ood@localhost user or
 other local users
 
-Default value: ``false``
+Default value: `false`
 
-##### <a name="listen_addr_port"></a>`listen_addr_port`
+##### <a name="-openondemand--listen_addr_port"></a>`listen_addr_port`
 
 Data type: `Variant[Array, String, Undef]`
 
 ood_portal.yml listen_addr_port
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="servername"></a>`servername`
+##### <a name="-openondemand--servername"></a>`servername`
 
 Data type: `Optional[String]`
 
 ood_portal.yml servername
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="server_aliases"></a>`server_aliases`
+##### <a name="-openondemand--server_aliases"></a>`server_aliases`
 
 Data type: `Optional[Array]`
 
 ood_porta.yml server_aliases
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="ssl"></a>`ssl`
+##### <a name="-openondemand--ssl"></a>`ssl`
 
 Data type: `Optional[Array]`
 
 ood_portal.yml ssl
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="logroot"></a>`logroot`
+##### <a name="-openondemand--logroot"></a>`logroot`
 
 Data type: `String`
 
@@ -345,23 +345,23 @@ ood_portal.yml logroot
 
 Default value: `'logs'`
 
-##### <a name="use_rewrites"></a>`use_rewrites`
+##### <a name="-openondemand--use_rewrites"></a>`use_rewrites`
 
 Data type: `Boolean`
 
 ood_portal.yml use_rewrites
 
-Default value: ``true``
+Default value: `true`
 
-##### <a name="use_maintenance"></a>`use_maintenance`
+##### <a name="-openondemand--use_maintenance"></a>`use_maintenance`
 
 Data type: `Boolean`
 
 ood_portal.yml use_maintenance
 
-Default value: ``true``
+Default value: `true`
 
-##### <a name="maintenance_ip_allowlist"></a>`maintenance_ip_allowlist`
+##### <a name="-openondemand--maintenance_ip_allowlist"></a>`maintenance_ip_allowlist`
 
 Data type: `Array`
 
@@ -369,39 +369,39 @@ ood_portal.yml maintenance_ip_allowlist
 
 Default value: `[]`
 
-##### <a name="maintenance_source"></a>`maintenance_source`
+##### <a name="-openondemand--maintenance_source"></a>`maintenance_source`
 
 Data type: `Optional[String]`
 
 Source for maintenance index.html
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="maintenance_content"></a>`maintenance_content`
+##### <a name="-openondemand--maintenance_content"></a>`maintenance_content`
 
 Data type: `Optional[String]`
 
 Content for maintenance index.html
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="security_csp_frame_ancestors"></a>`security_csp_frame_ancestors`
+##### <a name="-openondemand--security_csp_frame_ancestors"></a>`security_csp_frame_ancestors`
 
 Data type: `Optional[Variant[String, Boolean]]`
 
 ood_portal.yml security_csp_frame_ancestors
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="security_strict_transport"></a>`security_strict_transport`
+##### <a name="-openondemand--security_strict_transport"></a>`security_strict_transport`
 
 Data type: `Boolean`
 
 ood_portal.yml security_strict_transport
 
-Default value: ``true``
+Default value: `true`
 
-##### <a name="lua_root"></a>`lua_root`
+##### <a name="-openondemand--lua_root"></a>`lua_root`
 
 Data type: `String`
 
@@ -409,15 +409,15 @@ ood_portal.yml lua_root
 
 Default value: `'/opt/ood/mod_ood_proxy/lib'`
 
-##### <a name="lua_log_level"></a>`lua_log_level`
+##### <a name="-openondemand--lua_log_level"></a>`lua_log_level`
 
 Data type: `Optional[String]`
 
 ood_portal.yml lua_log_level
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="user_map_match"></a>`user_map_match`
+##### <a name="-openondemand--user_map_match"></a>`user_map_match`
 
 Data type: `String`
 
@@ -425,31 +425,31 @@ ood_portal.yml user_map_match
 
 Default value: `'.*'`
 
-##### <a name="user_map_cmd"></a>`user_map_cmd`
+##### <a name="-openondemand--user_map_cmd"></a>`user_map_cmd`
 
 Data type: `Optional[String]`
 
 ood_portal.yml user_map_cmd
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="user_env"></a>`user_env`
+##### <a name="-openondemand--user_env"></a>`user_env`
 
 Data type: `Optional[String]`
 
 ood_portal.yml user_env
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="map_fail_uri"></a>`map_fail_uri`
+##### <a name="-openondemand--map_fail_uri"></a>`map_fail_uri`
 
 Data type: `Optional[String]`
 
 ood_portal.yml map_fail_uri
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="auth_type"></a>`auth_type`
+##### <a name="-openondemand--auth_type"></a>`auth_type`
 
 Data type: `Variant[Enum['CAS', 'openid-connect', 'shibboleth', 'dex'], String[1]]`
 
@@ -457,15 +457,15 @@ ood_portal.yml auth_type
 
 Default value: `'dex'`
 
-##### <a name="auth_configs"></a>`auth_configs`
+##### <a name="-openondemand--auth_configs"></a>`auth_configs`
 
 Data type: `Optional[Array]`
 
 ood_portal.yml auth_configs
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="root_uri"></a>`root_uri`
+##### <a name="-openondemand--root_uri"></a>`root_uri`
 
 Data type: `String`
 
@@ -473,15 +473,15 @@ ood_portal.yml root_uri
 
 Default value: `'/pun/sys/dashboard'`
 
-##### <a name="analytics"></a>`analytics`
+##### <a name="-openondemand--analytics"></a>`analytics`
 
 Data type: `Optional[Struct[{ url => String, id => String }]]`
 
 ood_portal.yml analytics
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="public_uri"></a>`public_uri`
+##### <a name="-openondemand--public_uri"></a>`public_uri`
 
 Data type: `String`
 
@@ -489,7 +489,7 @@ ood_portal.yml public_uri
 
 Default value: `'/public'`
 
-##### <a name="public_root"></a>`public_root`
+##### <a name="-openondemand--public_root"></a>`public_root`
 
 Data type: `String`
 
@@ -497,7 +497,7 @@ ood_portal.yml public_root
 
 Default value: `'/var/www/ood/public'`
 
-##### <a name="logout_uri"></a>`logout_uri`
+##### <a name="-openondemand--logout_uri"></a>`logout_uri`
 
 Data type: `String`
 
@@ -505,7 +505,7 @@ ood_portal.yml logout_uri
 
 Default value: `'/logout'`
 
-##### <a name="logout_redirect"></a>`logout_redirect`
+##### <a name="-openondemand--logout_redirect"></a>`logout_redirect`
 
 Data type: `String`
 
@@ -513,7 +513,7 @@ ood_portal.yml logout_redirect
 
 Default value: `'/pun/sys/dashboard/logout'`
 
-##### <a name="host_regex"></a>`host_regex`
+##### <a name="-openondemand--host_regex"></a>`host_regex`
 
 Data type: `String`
 
@@ -521,23 +521,23 @@ ood_portal.yml host_regex
 
 Default value: `'[^/]+'`
 
-##### <a name="node_uri"></a>`node_uri`
+##### <a name="-openondemand--node_uri"></a>`node_uri`
 
 Data type: `Optional[String]`
 
 ood_portal.yml node_uri
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="rnode_uri"></a>`rnode_uri`
+##### <a name="-openondemand--rnode_uri"></a>`rnode_uri`
 
 Data type: `Optional[String]`
 
 ood_portal.yml rnode_uri
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="nginx_uri"></a>`nginx_uri`
+##### <a name="-openondemand--nginx_uri"></a>`nginx_uri`
 
 Data type: `String`
 
@@ -545,7 +545,7 @@ ood_portal.yml nginx_uri
 
 Default value: `'/nginx'`
 
-##### <a name="pun_uri"></a>`pun_uri`
+##### <a name="-openondemand--pun_uri"></a>`pun_uri`
 
 Data type: `String`
 
@@ -553,7 +553,7 @@ ood_portal.yml pun_uri
 
 Default value: `'/pun'`
 
-##### <a name="pun_socket_root"></a>`pun_socket_root`
+##### <a name="-openondemand--pun_socket_root"></a>`pun_socket_root`
 
 Data type: `String`
 
@@ -561,7 +561,7 @@ ood_portal.yml pun_socket_root
 
 Default value: `'/var/run/ondemand-nginx'`
 
-##### <a name="pun_max_retries"></a>`pun_max_retries`
+##### <a name="-openondemand--pun_max_retries"></a>`pun_max_retries`
 
 Data type: `Integer`
 
@@ -569,87 +569,87 @@ ood_portal.yml pun_max_retries
 
 Default value: `5`
 
-##### <a name="pun_pre_hook_root_cmd"></a>`pun_pre_hook_root_cmd`
+##### <a name="-openondemand--pun_pre_hook_root_cmd"></a>`pun_pre_hook_root_cmd`
 
 Data type: `Optional[Stdlib::Absolutepath]`
 
 ood_portal.yml pun_pre_hook_root_cmd
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="pun_pre_hook_exports"></a>`pun_pre_hook_exports`
+##### <a name="-openondemand--pun_pre_hook_exports"></a>`pun_pre_hook_exports`
 
 Data type: `Optional[String]`
 
 ood_porta.yml pun_pre_hook_exports
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="oidc_uri"></a>`oidc_uri`
+##### <a name="-openondemand--oidc_uri"></a>`oidc_uri`
 
 Data type: `Optional[String]`
 
 ood_portal.yml oidc_uri
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="oidc_discover_uri"></a>`oidc_discover_uri`
+##### <a name="-openondemand--oidc_discover_uri"></a>`oidc_discover_uri`
 
 Data type: `Optional[String]`
 
 ood_portal.yml oidc_discover_uri
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="oidc_discover_root"></a>`oidc_discover_root`
+##### <a name="-openondemand--oidc_discover_root"></a>`oidc_discover_root`
 
 Data type: `Optional[String]`
 
 ood_portal.yml oidc_discover_root
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="register_uri"></a>`register_uri`
+##### <a name="-openondemand--register_uri"></a>`register_uri`
 
 Data type: `Optional[String]`
 
 ood_portal.yml register_uri
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="register_root"></a>`register_root`
+##### <a name="-openondemand--register_root"></a>`register_root`
 
 Data type: `Optional[String]`
 
 ood_portal.yml register_root
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="oidc_provider_metadata_url"></a>`oidc_provider_metadata_url`
+##### <a name="-openondemand--oidc_provider_metadata_url"></a>`oidc_provider_metadata_url`
 
 Data type: `Optional[String]`
 
 OIDC metadata URL
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="oidc_client_id"></a>`oidc_client_id`
+##### <a name="-openondemand--oidc_client_id"></a>`oidc_client_id`
 
 Data type: `Optional[String]`
 
 OIDC client ID
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="oidc_client_secret"></a>`oidc_client_secret`
+##### <a name="-openondemand--oidc_client_secret"></a>`oidc_client_secret`
 
 Data type: `Optional[String]`
 
 OIDC client secret
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="oidc_remote_user_claim"></a>`oidc_remote_user_claim`
+##### <a name="-openondemand--oidc_remote_user_claim"></a>`oidc_remote_user_claim`
 
 Data type: `String`
 
@@ -657,7 +657,7 @@ OIDC REMOTE_USER claim
 
 Default value: `'preferred_username'`
 
-##### <a name="oidc_scope"></a>`oidc_scope`
+##### <a name="-openondemand--oidc_scope"></a>`oidc_scope`
 
 Data type: `String`
 
@@ -665,7 +665,7 @@ OIDC scopes
 
 Default value: `'openid profile email'`
 
-##### <a name="oidc_session_inactivity_timeout"></a>`oidc_session_inactivity_timeout`
+##### <a name="-openondemand--oidc_session_inactivity_timeout"></a>`oidc_session_inactivity_timeout`
 
 Data type: `Integer`
 
@@ -673,7 +673,7 @@ OIDC session inactivity timeout, see OIDCSessionInactivityTimeout
 
 Default value: `28800`
 
-##### <a name="oidc_session_max_duration"></a>`oidc_session_max_duration`
+##### <a name="-openondemand--oidc_session_max_duration"></a>`oidc_session_max_duration`
 
 Data type: `Integer`
 
@@ -681,7 +681,7 @@ OIDC session max duration, see OIDCSessionMaxDuration
 
 Default value: `28800`
 
-##### <a name="oidc_state_max_number_of_cookies"></a>`oidc_state_max_number_of_cookies`
+##### <a name="-openondemand--oidc_state_max_number_of_cookies"></a>`oidc_state_max_number_of_cookies`
 
 Data type: `String`
 
@@ -689,7 +689,7 @@ OIDC setting that determines how to clean up cookies
 
 Default value: `'10 true'`
 
-##### <a name="oidc_settings"></a>`oidc_settings`
+##### <a name="-openondemand--oidc_settings"></a>`oidc_settings`
 
 Data type: `Hash`
 
@@ -697,7 +697,7 @@ Hash of OIDC settings passsed directly to Apache config
 
 Default value: `{}`
 
-##### <a name="dex_uri"></a>`dex_uri`
+##### <a name="-openondemand--dex_uri"></a>`dex_uri`
 
 Data type: `Variant[String[1],Boolean]`
 
@@ -705,7 +705,7 @@ Dex URI if put behind Apache reverse proxy
 
 Default value: `'/dex'`
 
-##### <a name="dex_config"></a>`dex_config`
+##### <a name="-openondemand--dex_config"></a>`dex_config`
 
 Data type: `Openondemand::Dex_config`
 
@@ -713,7 +713,7 @@ Dex configuration Hash
 
 Default value: `{}`
 
-##### <a name="web_directory"></a>`web_directory`
+##### <a name="-openondemand--web_directory"></a>`web_directory`
 
 Data type: `Stdlib::Absolutepath`
 
@@ -721,7 +721,7 @@ Path to main web directory for OnDemand
 
 Default value: `'/var/www/ood'`
 
-##### <a name="nginx_log_group"></a>`nginx_log_group`
+##### <a name="-openondemand--nginx_log_group"></a>`nginx_log_group`
 
 Data type: `String`
 
@@ -729,7 +729,7 @@ Group to set for /var/log/ondemand-nginx
 
 Default value: `'ondemand-nginx'`
 
-##### <a name="nginx_stage_clean_cron_schedule"></a>`nginx_stage_clean_cron_schedule`
+##### <a name="-openondemand--nginx_stage_clean_cron_schedule"></a>`nginx_stage_clean_cron_schedule`
 
 Data type: `String`
 
@@ -738,7 +738,7 @@ Defaults to '0 */2 * * *' (every other hour)
 
 Default value: `'0 */2 * * *'`
 
-##### <a name="nginx_stage_ondemand_portal"></a>`nginx_stage_ondemand_portal`
+##### <a name="-openondemand--nginx_stage_ondemand_portal"></a>`nginx_stage_ondemand_portal`
 
 Data type: `String`
 
@@ -746,7 +746,7 @@ nginx_stage.yml ondemand_portal
 
 Default value: `'ondemand'`
 
-##### <a name="nginx_stage_ondemand_title"></a>`nginx_stage_ondemand_title`
+##### <a name="-openondemand--nginx_stage_ondemand_title"></a>`nginx_stage_ondemand_title`
 
 Data type: `String`
 
@@ -754,7 +754,7 @@ nginx_stage.yml ondemand_title
 
 Default value: `'Open OnDemand'`
 
-##### <a name="nginx_stage_pun_custom_env"></a>`nginx_stage_pun_custom_env`
+##### <a name="-openondemand--nginx_stage_pun_custom_env"></a>`nginx_stage_pun_custom_env`
 
 Data type: `Hash`
 
@@ -762,7 +762,7 @@ nginx_stage.yml pun_custom_env
 
 Default value: `{}`
 
-##### <a name="nginx_stage_app_root"></a>`nginx_stage_app_root`
+##### <a name="-openondemand--nginx_stage_app_root"></a>`nginx_stage_app_root`
 
 Data type: `Openondemand::Nginx_stage_namespace_config`
 
@@ -770,7 +770,7 @@ nginx_stage.yml app_root
 
 Default value: `{}`
 
-##### <a name="nginx_stage_scl_env"></a>`nginx_stage_scl_env`
+##### <a name="-openondemand--nginx_stage_scl_env"></a>`nginx_stage_scl_env`
 
 Data type: `String`
 
@@ -778,15 +778,15 @@ nginx_stage.yml scl_env
 
 Default value: `'ondemand'`
 
-##### <a name="nginx_stage_app_request_regex"></a>`nginx_stage_app_request_regex`
+##### <a name="-openondemand--nginx_stage_app_request_regex"></a>`nginx_stage_app_request_regex`
 
 Data type: `Optional[Openondemand::Nginx_stage_namespace_config]`
 
 nginx_stage.yml app_request_regex
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="nginx_stage_min_uid"></a>`nginx_stage_min_uid`
+##### <a name="-openondemand--nginx_stage_min_uid"></a>`nginx_stage_min_uid`
 
 Data type: `Integer`
 
@@ -794,7 +794,7 @@ nginx_stage.yml min_uid
 
 Default value: `1000`
 
-##### <a name="nginx_stage_passenger_pool_idle_time"></a>`nginx_stage_passenger_pool_idle_time`
+##### <a name="-openondemand--nginx_stage_passenger_pool_idle_time"></a>`nginx_stage_passenger_pool_idle_time`
 
 Data type: `Integer`
 
@@ -802,7 +802,7 @@ nginx_stage.yml passenger_pool_idle_time
 
 Default value: `300`
 
-##### <a name="nginx_stage_passenger_options"></a>`nginx_stage_passenger_options`
+##### <a name="-openondemand--nginx_stage_passenger_options"></a>`nginx_stage_passenger_options`
 
 Data type: `Hash[Pattern[/^passenger_.+/], Variant[String, Integer]]`
 
@@ -810,15 +810,15 @@ nginx_stage.yml passenger_options
 
 Default value: `{}`
 
-##### <a name="nginx_stage_nginx_file_upload_max"></a>`nginx_stage_nginx_file_upload_max`
+##### <a name="-openondemand--nginx_stage_nginx_file_upload_max"></a>`nginx_stage_nginx_file_upload_max`
 
 Data type: `Optional[Integer]`
 
 nginx_stage.yml nginx_file_upload_max
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="nginx_stage_configs"></a>`nginx_stage_configs`
+##### <a name="-openondemand--nginx_stage_configs"></a>`nginx_stage_configs`
 
 Data type: `Hash`
 
@@ -826,33 +826,33 @@ nginx_stage.yml extra configuration options
 
 Default value: `{}`
 
-##### <a name="config_dir_purge"></a>`config_dir_purge`
+##### <a name="-openondemand--config_dir_purge"></a>`config_dir_purge`
 
 Data type: `Boolean`
 
 Boolean that sets if ondemand.d should be purged of unmanaged files
 
-Default value: ``true``
+Default value: `true`
 
-##### <a name="config_source"></a>`config_source`
+##### <a name="-openondemand--config_source"></a>`config_source`
 
 Data type: `Optional[String]`
 
 The source for /etc/ood/config/ondemand.d/ondemand.yml
 Overrides `config_content` as well as pinned apps and dashboard layout parameters
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="config_content"></a>`config_content`
+##### <a name="-openondemand--config_content"></a>`config_content`
 
 Data type: `Optional[String]`
 
 The content for /etc/ood/config/ondemand.d/ondemand.yml
 Overrides pinned apps and dashboard layout parameters
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="confs"></a>`confs`
+##### <a name="-openondemand--confs"></a>`confs`
 
 Data type: `Hash`
 
@@ -860,47 +860,47 @@ Hash to define openondemand::conf resources
 
 Default value: `{}`
 
-##### <a name="pinned_apps"></a>`pinned_apps`
+##### <a name="-openondemand--pinned_apps"></a>`pinned_apps`
 
 Data type: `Optional[Array[Variant[String[1], Hash]]]`
 
 Defines the OnDemand configuration for pinned_apps
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="pinned_apps_menu_length"></a>`pinned_apps_menu_length`
+##### <a name="-openondemand--pinned_apps_menu_length"></a>`pinned_apps_menu_length`
 
 Data type: `Optional[Integer]`
 
 Defines the OnDemand configuration for pinned_apps_menu_length
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="pinned_apps_group_by"></a>`pinned_apps_group_by`
+##### <a name="-openondemand--pinned_apps_group_by"></a>`pinned_apps_group_by`
 
 Data type: `Optional[String[1]]`
 
 Defines the OnDemand configuration for pinned_apps_group_by
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="dashboard_layout"></a>`dashboard_layout`
+##### <a name="-openondemand--dashboard_layout"></a>`dashboard_layout`
 
 Data type: `Optional[Openondemand::Dashboard_layout]`
 
 Defines the OnDemand configuration for dashboard_layout
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="hook_env"></a>`hook_env`
+##### <a name="-openondemand--hook_env"></a>`hook_env`
 
 Data type: `Boolean`
 
 Boolean that sets of hook.env configuration should be managed
 
-Default value: ``true``
+Default value: `true`
 
-##### <a name="hook_env_path"></a>`hook_env_path`
+##### <a name="-openondemand--hook_env_path"></a>`hook_env_path`
 
 Data type: `Stdlib::Absolutepath`
 
@@ -908,7 +908,7 @@ Path to hook.env
 
 Default value: `'/etc/ood/config/hook.env'`
 
-##### <a name="hook_env_config"></a>`hook_env_config`
+##### <a name="-openondemand--hook_env_config"></a>`hook_env_config`
 
 Data type: `Hash`
 
@@ -916,7 +916,7 @@ Configuration hash to pass into hook.env
 
 Default value: `{}`
 
-##### <a name="kubectl_path"></a>`kubectl_path`
+##### <a name="-openondemand--kubectl_path"></a>`kubectl_path`
 
 Data type: `Stdlib::Absolutepath`
 
@@ -924,7 +924,7 @@ Path to kubectl
 
 Default value: `'/bin/kubectl'`
 
-##### <a name="clusters"></a>`clusters`
+##### <a name="-openondemand--clusters"></a>`clusters`
 
 Data type: `Hash`
 
@@ -932,15 +932,15 @@ Hash of resources to apss to openondemand::cluster
 
 Default value: `{}`
 
-##### <a name="clusters_hiera_merge"></a>`clusters_hiera_merge`
+##### <a name="-openondemand--clusters_hiera_merge"></a>`clusters_hiera_merge`
 
 Data type: `Boolean`
 
 Boolean that determines if clusters should be merged via lookup function
 
-Default value: ``true``
+Default value: `true`
 
-##### <a name="usr_apps"></a>`usr_apps`
+##### <a name="-openondemand--usr_apps"></a>`usr_apps`
 
 Data type: `Variant[Array, Hash]`
 
@@ -948,7 +948,7 @@ Resources passed to openondemand::app::usr
 
 Default value: `{}`
 
-##### <a name="usr_app_defaults"></a>`usr_app_defaults`
+##### <a name="-openondemand--usr_app_defaults"></a>`usr_app_defaults`
 
 Data type: `Hash`
 
@@ -956,7 +956,7 @@ Defaults for `usr_apps` resources
 
 Default value: `{}`
 
-##### <a name="dev_apps"></a>`dev_apps`
+##### <a name="-openondemand--dev_apps"></a>`dev_apps`
 
 Data type: `Hash`
 
@@ -964,7 +964,7 @@ Resources passed to openondemand::app::dev
 
 Default value: `{}`
 
-##### <a name="dev_app_users"></a>`dev_app_users`
+##### <a name="-openondemand--dev_app_users"></a>`dev_app_users`
 
 Data type: `Array`
 
@@ -972,7 +972,7 @@ Users to define as having dev apps, passed to openondemand::app::dev
 
 Default value: `[]`
 
-##### <a name="dev_app_defaults"></a>`dev_app_defaults`
+##### <a name="-openondemand--dev_app_defaults"></a>`dev_app_defaults`
 
 Data type: `Hash`
 
@@ -980,23 +980,23 @@ Defaults for `dev_apps` and `dev_app_users`
 
 Default value: `{}`
 
-##### <a name="apps_config_repo"></a>`apps_config_repo`
+##### <a name="-openondemand--apps_config_repo"></a>`apps_config_repo`
 
 Data type: `Optional[String]`
 
 Git repo URL for apps config
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="apps_config_revision"></a>`apps_config_revision`
+##### <a name="-openondemand--apps_config_revision"></a>`apps_config_revision`
 
 Data type: `Optional[String]`
 
 Revision for apps config Git repo
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="apps_config_repo_path"></a>`apps_config_repo_path`
+##### <a name="-openondemand--apps_config_repo_path"></a>`apps_config_repo_path`
 
 Data type: `String`
 
@@ -1004,47 +1004,47 @@ Path in apps config Git repo for app configs
 
 Default value: `''`
 
-##### <a name="locales_config_repo_path"></a>`locales_config_repo_path`
+##### <a name="-openondemand--locales_config_repo_path"></a>`locales_config_repo_path`
 
 Data type: `Optional[String]`
 
 Path in apps config Git repo for locales configs
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="announcements_config_repo_path"></a>`announcements_config_repo_path`
+##### <a name="-openondemand--announcements_config_repo_path"></a>`announcements_config_repo_path`
 
 Data type: `Optional[String]`
 
 Path in apps config Git repo for announcements
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="apps_config_source"></a>`apps_config_source`
+##### <a name="-openondemand--apps_config_source"></a>`apps_config_source`
 
 Data type: `Optional[String]`
 
 Source for apps config, not used if `apps_config_repo` is defined
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="locales_config_source"></a>`locales_config_source`
+##### <a name="-openondemand--locales_config_source"></a>`locales_config_source`
 
 Data type: `Optional[String]`
 
 Source for locales config, not used if `apps_config_repo` is defined
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="announcements_config_source"></a>`announcements_config_source`
+##### <a name="-openondemand--announcements_config_source"></a>`announcements_config_source`
 
 Data type: `Optional[String]`
 
 Source for aouncements config, not used if `apps_config_repo` is defined
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="public_files_repo_paths"></a>`public_files_repo_paths`
+##### <a name="-openondemand--public_files_repo_paths"></a>`public_files_repo_paths`
 
 Data type: `Array`
 
@@ -1052,17 +1052,17 @@ Path to public files in apps config Git repo
 
 Default value: `[]`
 
-##### <a name="manage_logrotate"></a>`manage_logrotate`
+##### <a name="-openondemand--manage_logrotate"></a>`manage_logrotate`
 
 Data type: `Boolean`
 
 Boolean that allows disabling management of logrotate
 
-Default value: ``true``
+Default value: `true`
 
 ## Defined types
 
-### <a name="openondemandappdev"></a>`openondemand::app::dev`
+### <a name="openondemand--app--dev"></a>`openondemand::app::dev`
 
 Manage Open OnDemand dev app
 
@@ -1078,14 +1078,14 @@ openondemand::app::dev { 'user1': }
 
 The following parameters are available in the `openondemand::app::dev` defined type:
 
-* [`ensure`](#ensure)
-* [`mode`](#mode)
-* [`owner`](#owner)
-* [`group`](#group)
-* [`home_subdir`](#home_subdir)
-* [`gateway_src`](#gateway_src)
+* [`ensure`](#-openondemand--app--dev--ensure)
+* [`mode`](#-openondemand--app--dev--mode)
+* [`owner`](#-openondemand--app--dev--owner)
+* [`group`](#-openondemand--app--dev--group)
+* [`home_subdir`](#-openondemand--app--dev--home_subdir)
+* [`gateway_src`](#-openondemand--app--dev--gateway_src)
 
-##### <a name="ensure"></a>`ensure`
+##### <a name="-openondemand--app--dev--ensure"></a>`ensure`
 
 Data type: `Enum['present','absent']`
 
@@ -1093,7 +1093,7 @@ Data type: `Enum['present','absent']`
 
 Default value: `'present'`
 
-##### <a name="mode"></a>`mode`
+##### <a name="-openondemand--app--dev--mode"></a>`mode`
 
 Data type: `Stdlib::Filemode`
 
@@ -1101,7 +1101,7 @@ File mode of dev app
 
 Default value: `'0755'`
 
-##### <a name="owner"></a>`owner`
+##### <a name="-openondemand--app--dev--owner"></a>`owner`
 
 Data type: `String`
 
@@ -1109,7 +1109,7 @@ Owner of dev app
 
 Default value: `'root'`
 
-##### <a name="group"></a>`group`
+##### <a name="-openondemand--app--dev--group"></a>`group`
 
 Data type: `String`
 
@@ -1117,7 +1117,7 @@ Group owning dev app
 
 Default value: `'root'`
 
-##### <a name="home_subdir"></a>`home_subdir`
+##### <a name="-openondemand--app--dev--home_subdir"></a>`home_subdir`
 
 Data type: `String`
 
@@ -1126,15 +1126,15 @@ Not used if `gateway_src` is defined
 
 Default value: `'ondemand/dev'`
 
-##### <a name="gateway_src"></a>`gateway_src`
+##### <a name="-openondemand--app--dev--gateway_src"></a>`gateway_src`
 
 Data type: `Optional[Stdlib::Absolutepath]`
 
 The path to dev app, overrides `home_subdir`
 
-Default value: ``undef``
+Default value: `undef`
 
-### <a name="openondemandappusr"></a>`openondemand::app::usr`
+### <a name="openondemand--app--usr"></a>`openondemand::app::usr`
 
 Manage Open OnDemand user app
 
@@ -1152,19 +1152,19 @@ openondemand::app::usr { 'user1':
 
 The following parameters are available in the `openondemand::app::usr` defined type:
 
-* [`gateway_src`](#gateway_src)
-* [`ensure`](#ensure)
-* [`mode`](#mode)
-* [`owner`](#owner)
-* [`group`](#group)
+* [`gateway_src`](#-openondemand--app--usr--gateway_src)
+* [`ensure`](#-openondemand--app--usr--ensure)
+* [`mode`](#-openondemand--app--usr--mode)
+* [`owner`](#-openondemand--app--usr--owner)
+* [`group`](#-openondemand--app--usr--group)
 
-##### <a name="gateway_src"></a>`gateway_src`
+##### <a name="-openondemand--app--usr--gateway_src"></a>`gateway_src`
 
 Data type: `Stdlib::Absolutepath`
 
 Path to source of user's apps
 
-##### <a name="ensure"></a>`ensure`
+##### <a name="-openondemand--app--usr--ensure"></a>`ensure`
 
 Data type: `Enum['present','absent']`
 
@@ -1172,7 +1172,7 @@ Data type: `Enum['present','absent']`
 
 Default value: `'present'`
 
-##### <a name="mode"></a>`mode`
+##### <a name="-openondemand--app--usr--mode"></a>`mode`
 
 Data type: `Stdlib::Filemode`
 
@@ -1180,7 +1180,7 @@ The file mode for shared apps
 
 Default value: `'0750'`
 
-##### <a name="owner"></a>`owner`
+##### <a name="-openondemand--app--usr--owner"></a>`owner`
 
 Data type: `String`
 
@@ -1188,7 +1188,7 @@ The file owner of shared apps
 
 Default value: `'root'`
 
-##### <a name="group"></a>`group`
+##### <a name="-openondemand--app--usr--group"></a>`group`
 
 Data type: `String`
 
@@ -1196,7 +1196,7 @@ The file group owner of shared apps
 
 Default value: `'root'`
 
-### <a name="openondemandcluster"></a>`openondemand::cluster`
+### <a name="openondemand--cluster"></a>`openondemand::cluster`
 
 Manage Open OnDemand cluster definition
 
@@ -1204,71 +1204,71 @@ Manage Open OnDemand cluster definition
 
 The following parameters are available in the `openondemand::cluster` defined type:
 
-* [`cluster_title`](#cluster_title)
-* [`owner`](#owner)
-* [`group`](#group)
-* [`mode`](#mode)
-* [`url`](#url)
-* [`hidden`](#hidden)
-* [`acls`](#acls)
-* [`login_host`](#login_host)
-* [`job_adapter`](#job_adapter)
-* [`job_cluster`](#job_cluster)
-* [`job_host`](#job_host)
-* [`job_lib`](#job_lib)
-* [`job_libdir`](#job_libdir)
-* [`job_bin`](#job_bin)
-* [`job_bindir`](#job_bindir)
-* [`job_conf`](#job_conf)
-* [`job_envdir`](#job_envdir)
-* [`job_serverdir`](#job_serverdir)
-* [`job_exec`](#job_exec)
-* [`sge_root`](#sge_root)
-* [`libdrmaa_path`](#libdrmaa_path)
-* [`job_version`](#job_version)
-* [`job_bin_overrides`](#job_bin_overrides)
-* [`job_submit_host`](#job_submit_host)
-* [`job_ssh_hosts`](#job_ssh_hosts)
-* [`job_site_timeout`](#job_site_timeout)
-* [`job_debug`](#job_debug)
-* [`job_singularity_bin`](#job_singularity_bin)
-* [`job_singularity_bindpath`](#job_singularity_bindpath)
-* [`job_singularity_image`](#job_singularity_image)
-* [`job_strict_host_checking`](#job_strict_host_checking)
-* [`job_tmux_bin`](#job_tmux_bin)
-* [`job_config_file`](#job_config_file)
-* [`job_username_prefix`](#job_username_prefix)
-* [`job_namespace_prefix`](#job_namespace_prefix)
-* [`job_all_namespaces`](#job_all_namespaces)
-* [`job_auto_supplemental_groups`](#job_auto_supplemental_groups)
-* [`job_server`](#job_server)
-* [`job_mounts`](#job_mounts)
-* [`job_auth`](#job_auth)
-* [`scheduler_type`](#scheduler_type)
-* [`scheduler_host`](#scheduler_host)
-* [`scheduler_bin`](#scheduler_bin)
-* [`scheduler_version`](#scheduler_version)
-* [`scheduler_params`](#scheduler_params)
-* [`rsv_query_acls`](#rsv_query_acls)
-* [`ganglia_host`](#ganglia_host)
-* [`ganglia_scheme`](#ganglia_scheme)
-* [`ganglia_segments`](#ganglia_segments)
-* [`ganglia_req_query`](#ganglia_req_query)
-* [`ganglia_opt_query`](#ganglia_opt_query)
-* [`ganglia_version`](#ganglia_version)
-* [`grafana_host`](#grafana_host)
-* [`grafana_org_id`](#grafana_org_id)
-* [`grafana_theme`](#grafana_theme)
-* [`grafana_dashboard_name`](#grafana_dashboard_name)
-* [`grafana_dashboard_uid`](#grafana_dashboard_uid)
-* [`grafana_dashboard_panels`](#grafana_dashboard_panels)
-* [`grafana_labels`](#grafana_labels)
-* [`grafana_cluster_override`](#grafana_cluster_override)
-* [`xdmod_resource_id`](#xdmod_resource_id)
-* [`custom_config`](#custom_config)
-* [`batch_connect`](#batch_connect)
+* [`cluster_title`](#-openondemand--cluster--cluster_title)
+* [`owner`](#-openondemand--cluster--owner)
+* [`group`](#-openondemand--cluster--group)
+* [`mode`](#-openondemand--cluster--mode)
+* [`url`](#-openondemand--cluster--url)
+* [`hidden`](#-openondemand--cluster--hidden)
+* [`acls`](#-openondemand--cluster--acls)
+* [`login_host`](#-openondemand--cluster--login_host)
+* [`job_adapter`](#-openondemand--cluster--job_adapter)
+* [`job_cluster`](#-openondemand--cluster--job_cluster)
+* [`job_host`](#-openondemand--cluster--job_host)
+* [`job_lib`](#-openondemand--cluster--job_lib)
+* [`job_libdir`](#-openondemand--cluster--job_libdir)
+* [`job_bin`](#-openondemand--cluster--job_bin)
+* [`job_bindir`](#-openondemand--cluster--job_bindir)
+* [`job_conf`](#-openondemand--cluster--job_conf)
+* [`job_envdir`](#-openondemand--cluster--job_envdir)
+* [`job_serverdir`](#-openondemand--cluster--job_serverdir)
+* [`job_exec`](#-openondemand--cluster--job_exec)
+* [`sge_root`](#-openondemand--cluster--sge_root)
+* [`libdrmaa_path`](#-openondemand--cluster--libdrmaa_path)
+* [`job_version`](#-openondemand--cluster--job_version)
+* [`job_bin_overrides`](#-openondemand--cluster--job_bin_overrides)
+* [`job_submit_host`](#-openondemand--cluster--job_submit_host)
+* [`job_ssh_hosts`](#-openondemand--cluster--job_ssh_hosts)
+* [`job_site_timeout`](#-openondemand--cluster--job_site_timeout)
+* [`job_debug`](#-openondemand--cluster--job_debug)
+* [`job_singularity_bin`](#-openondemand--cluster--job_singularity_bin)
+* [`job_singularity_bindpath`](#-openondemand--cluster--job_singularity_bindpath)
+* [`job_singularity_image`](#-openondemand--cluster--job_singularity_image)
+* [`job_strict_host_checking`](#-openondemand--cluster--job_strict_host_checking)
+* [`job_tmux_bin`](#-openondemand--cluster--job_tmux_bin)
+* [`job_config_file`](#-openondemand--cluster--job_config_file)
+* [`job_username_prefix`](#-openondemand--cluster--job_username_prefix)
+* [`job_namespace_prefix`](#-openondemand--cluster--job_namespace_prefix)
+* [`job_all_namespaces`](#-openondemand--cluster--job_all_namespaces)
+* [`job_auto_supplemental_groups`](#-openondemand--cluster--job_auto_supplemental_groups)
+* [`job_server`](#-openondemand--cluster--job_server)
+* [`job_mounts`](#-openondemand--cluster--job_mounts)
+* [`job_auth`](#-openondemand--cluster--job_auth)
+* [`scheduler_type`](#-openondemand--cluster--scheduler_type)
+* [`scheduler_host`](#-openondemand--cluster--scheduler_host)
+* [`scheduler_bin`](#-openondemand--cluster--scheduler_bin)
+* [`scheduler_version`](#-openondemand--cluster--scheduler_version)
+* [`scheduler_params`](#-openondemand--cluster--scheduler_params)
+* [`rsv_query_acls`](#-openondemand--cluster--rsv_query_acls)
+* [`ganglia_host`](#-openondemand--cluster--ganglia_host)
+* [`ganglia_scheme`](#-openondemand--cluster--ganglia_scheme)
+* [`ganglia_segments`](#-openondemand--cluster--ganglia_segments)
+* [`ganglia_req_query`](#-openondemand--cluster--ganglia_req_query)
+* [`ganglia_opt_query`](#-openondemand--cluster--ganglia_opt_query)
+* [`ganglia_version`](#-openondemand--cluster--ganglia_version)
+* [`grafana_host`](#-openondemand--cluster--grafana_host)
+* [`grafana_org_id`](#-openondemand--cluster--grafana_org_id)
+* [`grafana_theme`](#-openondemand--cluster--grafana_theme)
+* [`grafana_dashboard_name`](#-openondemand--cluster--grafana_dashboard_name)
+* [`grafana_dashboard_uid`](#-openondemand--cluster--grafana_dashboard_uid)
+* [`grafana_dashboard_panels`](#-openondemand--cluster--grafana_dashboard_panels)
+* [`grafana_labels`](#-openondemand--cluster--grafana_labels)
+* [`grafana_cluster_override`](#-openondemand--cluster--grafana_cluster_override)
+* [`xdmod_resource_id`](#-openondemand--cluster--xdmod_resource_id)
+* [`custom_config`](#-openondemand--cluster--custom_config)
+* [`batch_connect`](#-openondemand--cluster--batch_connect)
 
-##### <a name="cluster_title"></a>`cluster_title`
+##### <a name="-openondemand--cluster--cluster_title"></a>`cluster_title`
 
 Data type: `String`
 
@@ -1276,7 +1276,7 @@ Data type: `String`
 
 Default value: `$name`
 
-##### <a name="owner"></a>`owner`
+##### <a name="-openondemand--cluster--owner"></a>`owner`
 
 Data type: `String`
 
@@ -1284,7 +1284,7 @@ Owner of the cluster YAML file
 
 Default value: `'root'`
 
-##### <a name="group"></a>`group`
+##### <a name="-openondemand--cluster--group"></a>`group`
 
 Data type: `String`
 
@@ -1292,7 +1292,7 @@ Group of the cluster YAML file
 
 Default value: `'root'`
 
-##### <a name="mode"></a>`mode`
+##### <a name="-openondemand--cluster--mode"></a>`mode`
 
 Data type: `Stdlib::Filemode`
 
@@ -1300,23 +1300,23 @@ Ownership mode of the cluster YAML file
 
 Default value: `'0644'`
 
-##### <a name="url"></a>`url`
+##### <a name="-openondemand--cluster--url"></a>`url`
 
 Data type: `Optional[Variant[Stdlib::HTTPSUrl, Stdlib::HTTPUrl]]`
 
 
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="hidden"></a>`hidden`
+##### <a name="-openondemand--cluster--hidden"></a>`hidden`
 
 Data type: `Boolean`
 
 
 
-Default value: ``false``
+Default value: `false`
 
-##### <a name="acls"></a>`acls`
+##### <a name="-openondemand--cluster--acls"></a>`acls`
 
 Data type: `Array[Openondemand::Acl]`
 
@@ -1324,127 +1324,127 @@ Data type: `Array[Openondemand::Acl]`
 
 Default value: `[]`
 
-##### <a name="login_host"></a>`login_host`
+##### <a name="-openondemand--cluster--login_host"></a>`login_host`
 
 Data type: `Optional[Stdlib::Host]`
 
 
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="job_adapter"></a>`job_adapter`
+##### <a name="-openondemand--cluster--job_adapter"></a>`job_adapter`
 
 Data type: `Optional[Enum['torque','slurm','lsf','pbspro','sge','linux_host','kubernetes']]`
 
 
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="job_cluster"></a>`job_cluster`
+##### <a name="-openondemand--cluster--job_cluster"></a>`job_cluster`
 
 Data type: `Optional[String]`
 
 
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="job_host"></a>`job_host`
+##### <a name="-openondemand--cluster--job_host"></a>`job_host`
 
 Data type: `Optional[Stdlib::Host]`
 
 
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="job_lib"></a>`job_lib`
-
-Data type: `Optional[Stdlib::Absolutepath]`
-
-
-
-Default value: ``undef``
-
-##### <a name="job_libdir"></a>`job_libdir`
+##### <a name="-openondemand--cluster--job_lib"></a>`job_lib`
 
 Data type: `Optional[Stdlib::Absolutepath]`
 
 
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="job_bin"></a>`job_bin`
-
-Data type: `Optional[Stdlib::Absolutepath]`
-
-
-
-Default value: ``undef``
-
-##### <a name="job_bindir"></a>`job_bindir`
+##### <a name="-openondemand--cluster--job_libdir"></a>`job_libdir`
 
 Data type: `Optional[Stdlib::Absolutepath]`
 
 
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="job_conf"></a>`job_conf`
-
-Data type: `Optional[Stdlib::Absolutepath]`
-
-
-
-Default value: ``undef``
-
-##### <a name="job_envdir"></a>`job_envdir`
+##### <a name="-openondemand--cluster--job_bin"></a>`job_bin`
 
 Data type: `Optional[Stdlib::Absolutepath]`
 
 
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="job_serverdir"></a>`job_serverdir`
-
-Data type: `Optional[Stdlib::Absolutepath]`
-
-
-
-Default value: ``undef``
-
-##### <a name="job_exec"></a>`job_exec`
+##### <a name="-openondemand--cluster--job_bindir"></a>`job_bindir`
 
 Data type: `Optional[Stdlib::Absolutepath]`
 
 
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="sge_root"></a>`sge_root`
-
-Data type: `Optional[Stdlib::Absolutepath]`
-
-
-
-Default value: ``undef``
-
-##### <a name="libdrmaa_path"></a>`libdrmaa_path`
+##### <a name="-openondemand--cluster--job_conf"></a>`job_conf`
 
 Data type: `Optional[Stdlib::Absolutepath]`
 
 
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="job_version"></a>`job_version`
+##### <a name="-openondemand--cluster--job_envdir"></a>`job_envdir`
+
+Data type: `Optional[Stdlib::Absolutepath]`
+
+
+
+Default value: `undef`
+
+##### <a name="-openondemand--cluster--job_serverdir"></a>`job_serverdir`
+
+Data type: `Optional[Stdlib::Absolutepath]`
+
+
+
+Default value: `undef`
+
+##### <a name="-openondemand--cluster--job_exec"></a>`job_exec`
+
+Data type: `Optional[Stdlib::Absolutepath]`
+
+
+
+Default value: `undef`
+
+##### <a name="-openondemand--cluster--sge_root"></a>`sge_root`
+
+Data type: `Optional[Stdlib::Absolutepath]`
+
+
+
+Default value: `undef`
+
+##### <a name="-openondemand--cluster--libdrmaa_path"></a>`libdrmaa_path`
+
+Data type: `Optional[Stdlib::Absolutepath]`
+
+
+
+Default value: `undef`
+
+##### <a name="-openondemand--cluster--job_version"></a>`job_version`
 
 Data type: `Optional[String]`
 
 
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="job_bin_overrides"></a>`job_bin_overrides`
+##### <a name="-openondemand--cluster--job_bin_overrides"></a>`job_bin_overrides`
 
 Data type: `Hash[String, Stdlib::Absolutepath]`
 
@@ -1452,15 +1452,15 @@ Data type: `Hash[String, Stdlib::Absolutepath]`
 
 Default value: `{}`
 
-##### <a name="job_submit_host"></a>`job_submit_host`
+##### <a name="-openondemand--cluster--job_submit_host"></a>`job_submit_host`
 
 Data type: `Optional[Stdlib::Host]`
 
 
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="job_ssh_hosts"></a>`job_ssh_hosts`
+##### <a name="-openondemand--cluster--job_ssh_hosts"></a>`job_ssh_hosts`
 
 Data type: `Array[Stdlib::Host]`
 
@@ -1468,111 +1468,111 @@ Data type: `Array[Stdlib::Host]`
 
 Default value: `[]`
 
-##### <a name="job_site_timeout"></a>`job_site_timeout`
+##### <a name="-openondemand--cluster--job_site_timeout"></a>`job_site_timeout`
 
 Data type: `Optional[Integer]`
 
 
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="job_debug"></a>`job_debug`
+##### <a name="-openondemand--cluster--job_debug"></a>`job_debug`
 
 Data type: `Optional[Boolean]`
 
 
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="job_singularity_bin"></a>`job_singularity_bin`
+##### <a name="-openondemand--cluster--job_singularity_bin"></a>`job_singularity_bin`
 
 Data type: `Optional[Stdlib::Absolutepath]`
 
 
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="job_singularity_bindpath"></a>`job_singularity_bindpath`
+##### <a name="-openondemand--cluster--job_singularity_bindpath"></a>`job_singularity_bindpath`
 
 Data type: `Optional[Variant[Array[Stdlib::Absolutepath], String]]`
 
 
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="job_singularity_image"></a>`job_singularity_image`
+##### <a name="-openondemand--cluster--job_singularity_image"></a>`job_singularity_image`
 
 Data type: `Optional[String]`
 
 
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="job_strict_host_checking"></a>`job_strict_host_checking`
+##### <a name="-openondemand--cluster--job_strict_host_checking"></a>`job_strict_host_checking`
 
 Data type: `Optional[Boolean]`
 
 
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="job_tmux_bin"></a>`job_tmux_bin`
+##### <a name="-openondemand--cluster--job_tmux_bin"></a>`job_tmux_bin`
 
 Data type: `Optional[Stdlib::Absolutepath]`
 
 
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="job_config_file"></a>`job_config_file`
+##### <a name="-openondemand--cluster--job_config_file"></a>`job_config_file`
 
 Data type: `Optional[String[1]]`
 
 
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="job_username_prefix"></a>`job_username_prefix`
-
-Data type: `Optional[String]`
-
-
-
-Default value: ``undef``
-
-##### <a name="job_namespace_prefix"></a>`job_namespace_prefix`
+##### <a name="-openondemand--cluster--job_username_prefix"></a>`job_username_prefix`
 
 Data type: `Optional[String]`
 
 
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="job_all_namespaces"></a>`job_all_namespaces`
+##### <a name="-openondemand--cluster--job_namespace_prefix"></a>`job_namespace_prefix`
+
+Data type: `Optional[String]`
+
+
+
+Default value: `undef`
+
+##### <a name="-openondemand--cluster--job_all_namespaces"></a>`job_all_namespaces`
 
 Data type: `Boolean`
 
 
 
-Default value: ``false``
+Default value: `false`
 
-##### <a name="job_auto_supplemental_groups"></a>`job_auto_supplemental_groups`
+##### <a name="-openondemand--cluster--job_auto_supplemental_groups"></a>`job_auto_supplemental_groups`
 
 Data type: `Boolean`
 
 
 
-Default value: ``false``
+Default value: `false`
 
-##### <a name="job_server"></a>`job_server`
+##### <a name="-openondemand--cluster--job_server"></a>`job_server`
 
 Data type: `Optional[Openondemand::K8_server]`
 
 
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="job_mounts"></a>`job_mounts`
+##### <a name="-openondemand--cluster--job_mounts"></a>`job_mounts`
 
 Data type: `Array[Openondemand::K8_mount]`
 
@@ -1580,47 +1580,47 @@ Data type: `Array[Openondemand::K8_mount]`
 
 Default value: `[]`
 
-##### <a name="job_auth"></a>`job_auth`
+##### <a name="-openondemand--cluster--job_auth"></a>`job_auth`
 
 Data type: `Optional[Openondemand::K8_auth]`
 
 
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="scheduler_type"></a>`scheduler_type`
+##### <a name="-openondemand--cluster--scheduler_type"></a>`scheduler_type`
 
 Data type: `Optional[Enum['moab']]`
 
 
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="scheduler_host"></a>`scheduler_host`
+##### <a name="-openondemand--cluster--scheduler_host"></a>`scheduler_host`
 
 Data type: `Optional[Stdlib::Host]`
 
 
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="scheduler_bin"></a>`scheduler_bin`
+##### <a name="-openondemand--cluster--scheduler_bin"></a>`scheduler_bin`
 
 Data type: `Optional[Stdlib::Absolutepath]`
 
 
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="scheduler_version"></a>`scheduler_version`
+##### <a name="-openondemand--cluster--scheduler_version"></a>`scheduler_version`
 
 Data type: `Optional[String]`
 
 
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="scheduler_params"></a>`scheduler_params`
+##### <a name="-openondemand--cluster--scheduler_params"></a>`scheduler_params`
 
 Data type: `Hash`
 
@@ -1628,7 +1628,7 @@ Data type: `Hash`
 
 Default value: `{}`
 
-##### <a name="rsv_query_acls"></a>`rsv_query_acls`
+##### <a name="-openondemand--cluster--rsv_query_acls"></a>`rsv_query_acls`
 
 Data type: `Array[Openondemand::Acl]`
 
@@ -1636,15 +1636,15 @@ Data type: `Array[Openondemand::Acl]`
 
 Default value: `[]`
 
-##### <a name="ganglia_host"></a>`ganglia_host`
+##### <a name="-openondemand--cluster--ganglia_host"></a>`ganglia_host`
 
 Data type: `Optional[Stdlib::Host]`
 
 
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="ganglia_scheme"></a>`ganglia_scheme`
+##### <a name="-openondemand--cluster--ganglia_scheme"></a>`ganglia_scheme`
 
 Data type: `String`
 
@@ -1652,7 +1652,7 @@ Data type: `String`
 
 Default value: `'https://'`
 
-##### <a name="ganglia_segments"></a>`ganglia_segments`
+##### <a name="-openondemand--cluster--ganglia_segments"></a>`ganglia_segments`
 
 Data type: `Array`
 
@@ -1660,7 +1660,7 @@ Data type: `Array`
 
 Default value: `['gweb', 'graph.php']`
 
-##### <a name="ganglia_req_query"></a>`ganglia_req_query`
+##### <a name="-openondemand--cluster--ganglia_req_query"></a>`ganglia_req_query`
 
 Data type: `Hash`
 
@@ -1668,7 +1668,7 @@ Data type: `Hash`
 
 Default value: `{ 'c' => $name }`
 
-##### <a name="ganglia_opt_query"></a>`ganglia_opt_query`
+##### <a name="-openondemand--cluster--ganglia_opt_query"></a>`ganglia_opt_query`
 
 Data type: `Hash`
 
@@ -1676,7 +1676,7 @@ Data type: `Hash`
 
 Default value: `{ 'h' => "%{h}.${facts['networking']['domain']}" }`
 
-##### <a name="ganglia_version"></a>`ganglia_version`
+##### <a name="-openondemand--cluster--ganglia_version"></a>`ganglia_version`
 
 Data type: `String`
 
@@ -1684,15 +1684,15 @@ Data type: `String`
 
 Default value: `'3'`
 
-##### <a name="grafana_host"></a>`grafana_host`
+##### <a name="-openondemand--cluster--grafana_host"></a>`grafana_host`
 
 Data type: `Optional[Variant[Stdlib::HTTPSUrl,Stdlib::HTTPUrl]]`
 
 
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="grafana_org_id"></a>`grafana_org_id`
+##### <a name="-openondemand--cluster--grafana_org_id"></a>`grafana_org_id`
 
 Data type: `Integer`
 
@@ -1700,70 +1700,78 @@ Data type: `Integer`
 
 Default value: `1`
 
-##### <a name="grafana_theme"></a>`grafana_theme`
+##### <a name="-openondemand--cluster--grafana_theme"></a>`grafana_theme`
 
 Data type: `Optional[String]`
 
 
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="grafana_dashboard_name"></a>`grafana_dashboard_name`
-
-Data type: `Optional[String]`
-
-
-
-Default value: ``undef``
-
-##### <a name="grafana_dashboard_uid"></a>`grafana_dashboard_uid`
+##### <a name="-openondemand--cluster--grafana_dashboard_name"></a>`grafana_dashboard_name`
 
 Data type: `Optional[String]`
 
 
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="grafana_dashboard_panels"></a>`grafana_dashboard_panels`
+##### <a name="-openondemand--cluster--grafana_dashboard_uid"></a>`grafana_dashboard_uid`
 
-Data type: `Optional[Struct[{
+Data type: `Optional[String]`
+
+
+
+Default value: `undef`
+
+##### <a name="-openondemand--cluster--grafana_dashboard_panels"></a>`grafana_dashboard_panels`
+
+Data type:
+
+```puppet
+Optional[Struct[{
         'cpu' => Integer,
         'memory' => Integer,
-  }]]`
+  }]]
+```
 
 
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="grafana_labels"></a>`grafana_labels`
+##### <a name="-openondemand--cluster--grafana_labels"></a>`grafana_labels`
 
-Data type: `Optional[Struct[{
+Data type:
+
+```puppet
+Optional[Struct[{
         'cluster' => String,
         'host' => String,
         'jobid' => Optional[String],
-  }]]`
+  }]]
+```
 
 
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="grafana_cluster_override"></a>`grafana_cluster_override`
+##### <a name="-openondemand--cluster--grafana_cluster_override"></a>`grafana_cluster_override`
 
 Data type: `Optional[String]`
 
 
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="xdmod_resource_id"></a>`xdmod_resource_id`
+##### <a name="-openondemand--cluster--xdmod_resource_id"></a>`xdmod_resource_id`
 
 Data type: `Optional[Integer]`
 
 
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="custom_config"></a>`custom_config`
+##### <a name="-openondemand--cluster--custom_config"></a>`custom_config`
 
 Data type: `Hash`
 
@@ -1771,7 +1779,7 @@ Custom Hash passed to `v2.custom` in cluster YAML
 
 Default value: `{}`
 
-##### <a name="batch_connect"></a>`batch_connect`
+##### <a name="-openondemand--cluster--batch_connect"></a>`batch_connect`
 
 Data type: `Openondemand::Batch_connect`
 
@@ -1779,7 +1787,7 @@ Data type: `Openondemand::Batch_connect`
 
 Default value: `{}`
 
-### <a name="openondemandconf"></a>`openondemand::conf`
+### <a name="openondemand--conf"></a>`openondemand::conf`
 
 Manage Open OnDemand configuration file in /etc/ood/config/ondemand.d
 
@@ -1787,62 +1795,62 @@ Manage Open OnDemand configuration file in /etc/ood/config/ondemand.d
 
 The following parameters are available in the `openondemand::conf` defined type:
 
-* [`source`](#source)
-* [`content`](#content)
-* [`content_template`](#content_template)
-* [`data`](#data)
-* [`template`](#template)
-* [`filename`](#filename)
+* [`source`](#-openondemand--conf--source)
+* [`content`](#-openondemand--conf--content)
+* [`content_template`](#-openondemand--conf--content_template)
+* [`data`](#-openondemand--conf--data)
+* [`template`](#-openondemand--conf--template)
+* [`filename`](#-openondemand--conf--filename)
 
-##### <a name="source"></a>`source`
+##### <a name="-openondemand--conf--source"></a>`source`
 
 Data type: `Optional[String]`
 
 The source of the configuration file
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="content"></a>`content`
+##### <a name="-openondemand--conf--content"></a>`content`
 
 Data type: `Optional[String]`
 
 The content template of the configuration file
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="content_template"></a>`content_template`
+##### <a name="-openondemand--conf--content_template"></a>`content_template`
 
 Data type: `Optional[String]`
 
 The template to define content
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="data"></a>`data`
+##### <a name="-openondemand--conf--data"></a>`data`
 
 Data type: `Optional[Hash]`
 
 A hash of data to convert to YAML that defines the configuration file contents
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="template"></a>`template`
+##### <a name="-openondemand--conf--template"></a>`template`
 
 Data type: `Boolean`
 
 If true, the file will have .yml.erb extension, otherwise the extension is .yml
 
-Default value: ``false``
+Default value: `false`
 
-##### <a name="filename"></a>`filename`
+##### <a name="-openondemand--conf--filename"></a>`filename`
 
 Data type: `Optional[String]`
 
 Override the default filename for the configuration file
 
-Default value: ``undef``
+Default value: `undef`
 
-### <a name="openondemandinstallapp"></a>`openondemand::install::app`
+### <a name="openondemand--install--app"></a>`openondemand::install::app`
 
 Manage Open OnDemand app
 
@@ -1860,17 +1868,18 @@ openondemand::install::app { 'bc_osc_foo':
 
 The following parameters are available in the `openondemand::install::app` defined type:
 
-* [`ensure`](#ensure)
-* [`package`](#package)
-* [`manage_package`](#manage_package)
-* [`git_repo`](#git_repo)
-* [`git_revision`](#git_revision)
-* [`path`](#path)
-* [`owner`](#owner)
-* [`group`](#group)
-* [`mode`](#mode)
+* [`ensure`](#-openondemand--install--app--ensure)
+* [`package`](#-openondemand--install--app--package)
+* [`manage_package`](#-openondemand--install--app--manage_package)
+* [`git_repo`](#-openondemand--install--app--git_repo)
+* [`git_revision`](#-openondemand--install--app--git_revision)
+* [`source`](#-openondemand--install--app--source)
+* [`path`](#-openondemand--install--app--path)
+* [`owner`](#-openondemand--install--app--owner)
+* [`group`](#-openondemand--install--app--group)
+* [`mode`](#-openondemand--install--app--mode)
 
-##### <a name="ensure"></a>`ensure`
+##### <a name="-openondemand--install--app--ensure"></a>`ensure`
 
 Data type: `String`
 
@@ -1878,7 +1887,7 @@ Package ensure property if installing from a package
 
 Default value: `'present'`
 
-##### <a name="package"></a>`package`
+##### <a name="-openondemand--install--app--package"></a>`package`
 
 Data type: `String`
 
@@ -1886,40 +1895,48 @@ Package name for the app
 
 Default value: `"ondemand-${name}"`
 
-##### <a name="manage_package"></a>`manage_package`
+##### <a name="-openondemand--install--app--manage_package"></a>`manage_package`
 
 Data type: `Boolean`
 
 Should package be managed
 
-Default value: ``true``
+Default value: `true`
 
-##### <a name="git_repo"></a>`git_repo`
+##### <a name="-openondemand--install--app--git_repo"></a>`git_repo`
 
 Data type: `Optional[String]`
 
 The git repo to use to install the app
 If defined, no package will be installed
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="git_revision"></a>`git_revision`
+##### <a name="-openondemand--install--app--git_revision"></a>`git_revision`
 
 Data type: `Optional[String]`
 
 The git revision to checkout
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="path"></a>`path`
+##### <a name="-openondemand--install--app--source"></a>`source`
+
+Data type: `Optional[String]`
+
+The Puppet source path for app
+
+Default value: `undef`
+
+##### <a name="-openondemand--install--app--path"></a>`path`
 
 Data type: `Optional[Stdlib::Absolutepath]`
 
 Path to app, defaults to `/var/www/ood/apps/sys/$name`
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="owner"></a>`owner`
+##### <a name="-openondemand--install--app--owner"></a>`owner`
 
 Data type: `String`
 
@@ -1927,7 +1944,7 @@ File owner of app
 
 Default value: `'root'`
 
-##### <a name="group"></a>`group`
+##### <a name="-openondemand--install--app--group"></a>`group`
 
 Data type: `String`
 
@@ -1935,7 +1952,7 @@ File group owner of app
 
 Default value: `'root'`
 
-##### <a name="mode"></a>`mode`
+##### <a name="-openondemand--install--app--mode"></a>`mode`
 
 Data type: `String`
 
@@ -1945,7 +1962,7 @@ Default value: `'0755'`
 
 ## Data types
 
-### <a name="openondemandacl"></a>`Openondemand::Acl`
+### <a name="Openondemand--Acl"></a>`Openondemand::Acl`
 
 OnDemand cluster ACL
 
@@ -1958,7 +1975,7 @@ Struct[{ 'adapter' => Enum['group'],
                                   }]
 ```
 
-### <a name="openondemandbatch_connect"></a>`Openondemand::Batch_connect`
+### <a name="Openondemand--Batch_connect"></a>`Openondemand::Batch_connect`
 
 Defines cluster config batch_connect values
 
@@ -1978,7 +1995,7 @@ Struct[{
 }]
 ```
 
-### <a name="openondemanddashboard_layout"></a>`Openondemand::Dashboard_layout`
+### <a name="Openondemand--Dashboard_layout"></a>`Openondemand::Dashboard_layout`
 
 Dashboard layout
 
@@ -1990,7 +2007,7 @@ Struct[{
 }]
 ```
 
-### <a name="openondemanddashboard_layout_column"></a>`Openondemand::Dashboard_layout_column`
+### <a name="Openondemand--Dashboard_layout_column"></a>`Openondemand::Dashboard_layout_column`
 
 Dashboard layout column
 
@@ -2003,7 +2020,7 @@ Struct[{
 }]
 ```
 
-### <a name="openondemanddex_config"></a>`Openondemand::Dex_config`
+### <a name="Openondemand--Dex_config"></a>`Openondemand::Dex_config`
 
 ondemand-dex config
 
@@ -2029,7 +2046,7 @@ Struct[{
   }]
 ```
 
-### <a name="openondemandk8_auth"></a>`Openondemand::K8_auth`
+### <a name="Openondemand--K8_auth"></a>`Openondemand::K8_auth`
 
 OnDemand cluster Kubernetes auth
 
@@ -2041,7 +2058,7 @@ Struct[{
   }]
 ```
 
-### <a name="openondemandk8_mount"></a>`Openondemand::K8_mount`
+### <a name="Openondemand--K8_mount"></a>`Openondemand::K8_mount`
 
 OnDemand cluster Kubernetes mount
 
@@ -2057,7 +2074,7 @@ Struct[{ 'type' => String[1],
   }]
 ```
 
-### <a name="openondemandk8_server"></a>`Openondemand::K8_server`
+### <a name="Openondemand--K8_server"></a>`Openondemand::K8_server`
 
 OnDemand cluster Kubernetes mount
 
@@ -2069,7 +2086,7 @@ Struct[{ 'endpoint' => Stdlib::HTTPSUrl,
   }]
 ```
 
-### <a name="openondemandnginx_stage_namespace_config"></a>`Openondemand::Nginx_stage_namespace_config`
+### <a name="Openondemand--Nginx_stage_namespace_config"></a>`Openondemand::Nginx_stage_namespace_config`
 
 nginx_stage.yml namespace_config
 
