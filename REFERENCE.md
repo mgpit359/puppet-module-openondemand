@@ -1318,11 +1318,11 @@ Default value: `false`
 
 ##### <a name="-openondemand--cluster--acls"></a>`acls`
 
-Data type: `Array[Openondemand::Acl]`
+Data type: `Optional[Array[Openondemand::Acl]]`
 
 
 
-Default value: `[]`
+Default value: `undef`
 
 ##### <a name="-openondemand--cluster--login_host"></a>`login_host`
 
@@ -1446,11 +1446,11 @@ Default value: `undef`
 
 ##### <a name="-openondemand--cluster--job_bin_overrides"></a>`job_bin_overrides`
 
-Data type: `Hash[String, Stdlib::Absolutepath]`
+Data type: `Optional[Hash[String, Stdlib::Absolutepath]]`
 
 
 
-Default value: `{}`
+Default value: `undef`
 
 ##### <a name="-openondemand--cluster--job_submit_host"></a>`job_submit_host`
 
@@ -1462,11 +1462,11 @@ Default value: `undef`
 
 ##### <a name="-openondemand--cluster--job_ssh_hosts"></a>`job_ssh_hosts`
 
-Data type: `Array[Stdlib::Host]`
+Data type: `Optional[Array[Stdlib::Host]]`
 
 
 
-Default value: `[]`
+Default value: `undef`
 
 ##### <a name="-openondemand--cluster--job_site_timeout"></a>`job_site_timeout`
 
@@ -1574,11 +1574,11 @@ Default value: `undef`
 
 ##### <a name="-openondemand--cluster--job_mounts"></a>`job_mounts`
 
-Data type: `Array[Openondemand::K8_mount]`
+Data type: `Optional[Array[Openondemand::K8_mount]]`
 
 
 
-Default value: `[]`
+Default value: `undef`
 
 ##### <a name="-openondemand--cluster--job_auth"></a>`job_auth`
 
@@ -1630,11 +1630,11 @@ Default value: `{}`
 
 ##### <a name="-openondemand--cluster--rsv_query_acls"></a>`rsv_query_acls`
 
-Data type: `Array[Openondemand::Acl]`
+Data type: `Optional[Array[Openondemand::Acl]]`
 
 
 
-Default value: `[]`
+Default value: `undef`
 
 ##### <a name="-openondemand--cluster--ganglia_host"></a>`ganglia_host`
 
@@ -1781,11 +1781,11 @@ Default value: `{}`
 
 ##### <a name="-openondemand--cluster--batch_connect"></a>`batch_connect`
 
-Data type: `Openondemand::Batch_connect`
+Data type: `Optional[Openondemand::Batch_connect]`
 
 
 
-Default value: `{}`
+Default value: `undef`
 
 ### <a name="openondemand--conf"></a>`openondemand::conf`
 
