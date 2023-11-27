@@ -748,7 +748,7 @@ Default value: `'ondemand'`
 
 ##### <a name="-openondemand--nginx_stage_ondemand_title"></a>`nginx_stage_ondemand_title`
 
-Data type: `String`
+Data type: `Optional[String]`
 
 nginx_stage.yml ondemand_title
 
