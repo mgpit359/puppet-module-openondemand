@@ -752,7 +752,7 @@ Data type: `String`
 
 nginx_stage.yml ondemand_title
 
-Default value: `'Open OnDemand'`
+Default value: `undef`
 
 ##### <a name="-openondemand--nginx_stage_pun_custom_env"></a>`nginx_stage_pun_custom_env`
 
