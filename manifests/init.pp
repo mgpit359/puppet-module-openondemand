@@ -225,6 +225,8 @@
 #   Source for aouncements config, not used if `apps_config_repo` is defined
 # @param public_files_repo_paths
 #   Path to public files in apps config Git repo
+# @param public_files_source_paths
+#   Path to the source for public files
 # @param manage_logrotate
 #   Boolean that allows disabling management of logrotate
 #
@@ -367,6 +369,7 @@ class openondemand (
   Optional[String] $locales_config_source = undef,
   Optional[String] $announcements_config_source = undef,
   Array $public_files_repo_paths = [],
+  Array $public_files_source_paths = [],
 
   # Disable functionality
   Boolean $manage_logrotate = true,

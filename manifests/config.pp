@@ -190,6 +190,17 @@ class openondemand::config {
     }
   }
 
+  $openondemand::public_files_source_paths.each |$path| {
+    $basename = basename($path)
+    file { "${openondemand::public_root}/${basename}":
+      ensure => 'file',
+      owner  => 'root',
+      group  => 'root',
+      mode   => '0644',
+      source => $path,
+    }
+  }
+
   file { '/etc/ood/config/clusters.d':
     ensure  => 'directory',
     owner   => 'root',
