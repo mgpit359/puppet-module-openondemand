@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
+## [v4.4.0](https://github.com/osc/puppet-module-openondemand/tree/v4.4.0) (2024-01-21)
+
+[Full Changelog](https://github.com/osc/puppet-module-openondemand/compare/v4.3.1...v4.4.0)
+
+### Added
+
+- Added support to add module files into the OnDemand public folder [\#151](https://github.com/OSC/puppet-module-openondemand/pull/151) ([abujeda](https://github.com/abujeda))
+
 ## [v4.3.1](https://github.com/osc/puppet-module-openondemand/tree/v4.3.1) (2023-12-01)
 
 [Full Changelog](https://github.com/osc/puppet-module-openondemand/compare/v4.3.0...v4.3.1)

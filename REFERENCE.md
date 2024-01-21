@@ -165,6 +165,7 @@ The following parameters are available in the `openondemand` class:
 * [`locales_config_source`](#-openondemand--locales_config_source)
 * [`announcements_config_source`](#-openondemand--announcements_config_source)
 * [`public_files_repo_paths`](#-openondemand--public_files_repo_paths)
+* [`public_files_source_paths`](#-openondemand--public_files_source_paths)
 * [`manage_logrotate`](#-openondemand--manage_logrotate)
 
 ##### <a name="-openondemand--repo_release"></a>`repo_release`
@@ -1049,6 +1050,14 @@ Default value: `undef`
 Data type: `Array`
 
 Path to public files in apps config Git repo
+
+Default value: `[]`
+
+##### <a name="-openondemand--public_files_source_paths"></a>`public_files_source_paths`
+
+Data type: `Array`
+
+Path to the source for public files
 
 Default value: `[]`
 
