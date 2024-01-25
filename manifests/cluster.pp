@@ -68,6 +68,8 @@
 # @param custom_config
 #   Custom Hash passed to `v2.custom` in cluster YAML
 # @param batch_connect
+# @param source
+#   source file to create cluster configuration from.
 #
 define openondemand::cluster (
   String $cluster_title = $name,
@@ -142,6 +144,7 @@ define openondemand::cluster (
   Optional[Integer] $xdmod_resource_id = undef,
   Hash $custom_config = {},
   Optional[Openondemand::Batch_connect] $batch_connect = undef,
+  Optional[Stdlib::Filesource] $source = undef,
 ) {
   include openondemand
 
@@ -324,12 +327,19 @@ define openondemand::cluster (
     'v2' => $v2,
   }
 
+  if $source {
+    $content = undef
+  } else {
+    $content = to_yaml($config)
+  }
+
   file { "/etc/ood/config/clusters.d/${name}.yml":
     ensure  => 'file',
     owner   => $owner,
     group   => $group,
     mode    => $mode,
-    content => to_yaml($config),
+    content => $content,
+    source  => $source,
     notify  => Class['openondemand::service'],
   }
 }
