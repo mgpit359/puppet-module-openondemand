@@ -1285,6 +1285,7 @@ The following parameters are available in the `openondemand::cluster` defined ty
 * [`xdmod_resource_id`](#-openondemand--cluster--xdmod_resource_id)
 * [`custom_config`](#-openondemand--cluster--custom_config)
 * [`batch_connect`](#-openondemand--cluster--batch_connect)
+* [`source`](#-openondemand--cluster--source)
 
 ##### <a name="-openondemand--cluster--cluster_title"></a>`cluster_title`
 
@@ -1802,6 +1803,14 @@ Default value: `{}`
 Data type: `Optional[Openondemand::Batch_connect]`
 
 
+
+Default value: `undef`
+
+##### <a name="-openondemand--cluster--source"></a>`source`
+
+Data type: `Optional[Stdlib::Filesource]`
+
+source file to create cluster configuration from.
 
 Default value: `undef`
 
