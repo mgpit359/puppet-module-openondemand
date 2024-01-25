@@ -70,6 +70,7 @@ The following parameters are available in the `openondemand` class:
 * [`mod_auth_openidc_ensure`](#-openondemand--mod_auth_openidc_ensure)
 * [`install_apps`](#-openondemand--install_apps)
 * [`declare_apache`](#-openondemand--declare_apache)
+* [`apache_user`](#-openondemand--apache_user)
 * [`apache_scls`](#-openondemand--apache_scls)
 * [`generator_insecure`](#-openondemand--generator_insecure)
 * [`listen_addr_port`](#-openondemand--listen_addr_port)
@@ -287,6 +288,14 @@ Data type: `Boolean`
 Boolean that determines if apache is declared or included
 
 Default value: `true`
+
+##### <a name="-openondemand--apache_user"></a>`apache_user`
+
+Data type: `String[1]`
+
+Name of the Apache user
+
+Default value: `'apache'`
 
 ##### <a name="-openondemand--apache_scls"></a>`apache_scls`
 
