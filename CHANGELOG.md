@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
+## [v5.0.0](https://github.com/osc/puppet-module-openondemand/tree/v5.0.0) (2024-02-13)
+
+[Full Changelog](https://github.com/osc/puppet-module-openondemand/compare/v4.5.0...v5.0.0)
+
+### Changed
+
+- Support OnDemand 3.1 [\#154](https://github.com/OSC/puppet-module-openondemand/pull/154) ([treydock](https://github.com/treydock))
+
 ## [v4.5.0](https://github.com/osc/puppet-module-openondemand/tree/v4.5.0) (2024-01-25)
 
 [Full Changelog](https://github.com/osc/puppet-module-openondemand/compare/v4.4.1...v4.5.0)
@@ -266,29 +274,9 @@ All notable changes to this project will be documented in this file. The format 
 
 [Full Changelog](https://github.com/osc/puppet-module-openondemand/compare/v2.0.0...v2.1.0)
 
-### Added
-
-- Better cluster batch\_connect support, add ssh\_allow support [\#53](https://github.com/OSC/puppet-module-openondemand/pull/53) ([treydock](https://github.com/treydock))
-
 ## [v2.0.0](https://github.com/osc/puppet-module-openondemand/tree/v2.0.0) (2021-05-19)
 
 [Full Changelog](https://github.com/osc/puppet-module-openondemand/compare/v1.5.0...v2.0.0)
-
-### Changed
-
-- Drop Puppet 5 support, update dependency version ranges [\#50](https://github.com/OSC/puppet-module-openondemand/pull/50) ([treydock](https://github.com/treydock))
-- Support OnDemand 2.0 and Puppet 7 [\#46](https://github.com/OSC/puppet-module-openondemand/pull/46) ([treydock](https://github.com/treydock))
-
-### Added
-
-- Depend on EPEL for OnDemand 2.0 on EL7 [\#52](https://github.com/OSC/puppet-module-openondemand/pull/52) ([treydock](https://github.com/treydock))
-- Support hook.env [\#51](https://github.com/OSC/puppet-module-openondemand/pull/51) ([treydock](https://github.com/treydock))
-- Add tasks [\#48](https://github.com/OSC/puppet-module-openondemand/pull/48) ([treydock](https://github.com/treydock))
-- Add support for Kubernetes cluster definition [\#44](https://github.com/OSC/puppet-module-openondemand/pull/44) ([treydock](https://github.com/treydock))
-
-### Fixed
-
-- No longer set rh-ruby27 in Apache SCL, no longer needed [\#49](https://github.com/OSC/puppet-module-openondemand/pull/49) ([treydock](https://github.com/treydock))
 
 
 

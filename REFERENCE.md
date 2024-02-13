@@ -60,6 +60,7 @@ The following parameters are available in the `openondemand` class:
 * [`repo_gpgkey`](#-openondemand--repo_gpgkey)
 * [`repo_proxy`](#-openondemand--repo_proxy)
 * [`repo_priority`](#-openondemand--repo_priority)
+* [`repo_module_hotfixes`](#-openondemand--repo_module_hotfixes)
 * [`repo_exclude`](#-openondemand--repo_exclude)
 * [`manage_dependency_repos`](#-openondemand--manage_dependency_repos)
 * [`manage_epel`](#-openondemand--manage_epel)
@@ -77,6 +78,7 @@ The following parameters are available in the `openondemand` class:
 * [`servername`](#-openondemand--servername)
 * [`server_aliases`](#-openondemand--server_aliases)
 * [`ssl`](#-openondemand--ssl)
+* [`disable_logs`](#-openondemand--disable_logs)
 * [`logroot`](#-openondemand--logroot)
 * [`use_rewrites`](#-openondemand--use_rewrites)
 * [`use_maintenance`](#-openondemand--use_maintenance)
@@ -93,6 +95,8 @@ The following parameters are available in the `openondemand` class:
 * [`map_fail_uri`](#-openondemand--map_fail_uri)
 * [`auth_type`](#-openondemand--auth_type)
 * [`auth_configs`](#-openondemand--auth_configs)
+* [`custom_vhost_directives`](#-openondemand--custom_vhost_directives)
+* [`custom_location_directives`](#-openondemand--custom_location_directives)
 * [`root_uri`](#-openondemand--root_uri)
 * [`analytics`](#-openondemand--analytics)
 * [`public_uri`](#-openondemand--public_uri)
@@ -175,7 +179,7 @@ Data type: `String`
 
 The release of OnDemand repo
 
-Default value: `'3.0'`
+Default value: `'3.1'`
 
 ##### <a name="-openondemand--repo_baseurl_prefix"></a>`repo_baseurl_prefix`
 
@@ -208,6 +212,14 @@ Data type: `Integer[1,99]`
 The priority of the OnDemand repo
 
 Default value: `99`
+
+##### <a name="-openondemand--repo_module_hotfixes"></a>`repo_module_hotfixes`
+
+Data type: `Optional[Boolean]`
+
+The module_hotfixes of the OnDemand repo
+
+Default value: `undef`
 
 ##### <a name="-openondemand--repo_exclude"></a>`repo_exclude`
 
@@ -347,6 +359,14 @@ ood_portal.yml ssl
 
 Default value: `undef`
 
+##### <a name="-openondemand--disable_logs"></a>`disable_logs`
+
+Data type: `Boolean`
+
+ood_portal.yml disable_logs
+
+Default value: `false`
+
 ##### <a name="-openondemand--logroot"></a>`logroot`
 
 Data type: `String`
@@ -474,6 +494,22 @@ Data type: `Optional[Array]`
 ood_portal.yml auth_configs
 
 Default value: `undef`
+
+##### <a name="-openondemand--custom_vhost_directives"></a>`custom_vhost_directives`
+
+Data type: `Array`
+
+ood_portal.yml custom_vhost_directives
+
+Default value: `[]`
+
+##### <a name="-openondemand--custom_location_directives"></a>`custom_location_directives`
+
+Data type: `Array`
+
+ood_portal.yml custom_location_directives
+
+Default value: `[]`
 
 ##### <a name="-openondemand--root_uri"></a>`root_uri`
 
