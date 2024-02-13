@@ -75,10 +75,22 @@
       ]
     },
     {
+      "operatingsystem": "Amazon",
+      "operatingsystemrelease": [
+        "2023"
+      ]
+    },
+    {
       "operatingsystem": "Ubuntu",
       "operatingsystemrelease": [
         "20.04",
         "22.04"
+      ]
+    },
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "12"
       ]
     }
   ],
@@ -95,5 +107,5 @@
   ],
   "pdk-version": "2.7.1",
   "template-url": "https://github.com/treydock/pdk-templates.git#master",
-  "template-ref": "heads/master-0-g76f4dbb"
+  "template-ref": "heads/master-0-g5a59870"
 }

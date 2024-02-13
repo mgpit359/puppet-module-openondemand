@@ -23,6 +23,7 @@ class openondemand::repo::rpm {
     priority        => $openondemand::repo_priority,
     exclude         => $openondemand::repo_exclude,
     proxy           => $openondemand::repo_proxy,
+    module_hotfixes => $openondemand::repo_module_hotfixes,
   }
 
   yumrepo { 'ondemand-web-nightly':
@@ -36,19 +37,16 @@ class openondemand::repo::rpm {
     metadata_expire => '1',
     priority        => $openondemand::repo_priority,
     proxy           => $openondemand::repo_proxy,
+    module_hotfixes => $openondemand::repo_module_hotfixes,
   }
 
-  # Work around a bug where 'dnf module list' is not executed with -y
-  if versioncmp($openondemand::osmajor, '8') == 0 {
+  if versioncmp($openondemand::osmajor, '8') >= 0 {
+    # Work around a bug where 'dnf module list' is not executed with -y
     exec { 'dnf makecache ondemand-web':
       path        => '/usr/bin:/bin:/usr/sbin:/sbin',
       command     => "dnf -q makecache -y --disablerepo='*' --enablerepo='ondemand-web'",
       refreshonly => true,
       subscribe   => Yumrepo['ondemand-web'],
-    }
-    if $openondemand::manage_dependency_repos {
-      Exec['dnf makecache ondemand-web'] -> Package['nodejs']
-      Exec['dnf makecache ondemand-web'] -> Package['ruby']
     }
   }
 
@@ -56,13 +54,7 @@ class openondemand::repo::rpm {
     contain epel
   }
 
-  if versioncmp($openondemand::osmajor, '7') <= 0 and $openondemand::manage_dependency_repos {
-    if $facts['os']['name'] == 'CentOS' and versioncmp($openondemand::osmajor, '7') == 0 {
-      file { '/etc/yum.repos.d/ondemand-centos-scl.repo':
-        ensure => 'absent',
-      }
-    }
-
+  if versioncmp($openondemand::osmajor, '7') == 0 and $openondemand::manage_dependency_repos {
     case $facts['os']['name'] {
       'RedHat': {
         rh_repo { "rhel-server-rhscl-${openondemand::osmajor}-rpms":
@@ -80,16 +72,18 @@ class openondemand::repo::rpm {
     }
   }
 
-  if versioncmp($openondemand::osmajor, '8') == 0 and $openondemand::manage_dependency_repos {
+  if String($openondemand::osmajor) in ['8', '9'] and $openondemand::manage_dependency_repos {
     package { 'nodejs':
-      ensure      => '14',
+      ensure      => $openondemand::nodejs,
       enable_only => true,
       provider    => 'dnfmodule',
+      require     => Exec['dnf makecache ondemand-web'],
     }
     package { 'ruby':
-      ensure      => '3.0',
+      ensure      => $openondemand::ruby,
       enable_only => true,
       provider    => 'dnfmodule',
+      require     => Exec['dnf makecache ondemand-web'],
     }
   }
 }

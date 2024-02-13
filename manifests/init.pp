@@ -10,6 +10,8 @@
 #   The URL for proxy for OnDemand repo
 # @param repo_priority
 #   The priority of the OnDemand repo
+# @param repo_module_hotfixes
+#   The module_hotfixes of the OnDemand repo
 # @param repo_exclude
 #   Exclusion for OnDemand repo
 # @param manage_dependency_repos
@@ -46,6 +48,8 @@
 #   ood_porta.yml server_aliases
 # @param ssl
 #   ood_portal.yml ssl
+# @param disable_logs
+#   ood_portal.yml disable_logs
 # @param logroot
 #   ood_portal.yml logroot
 # @param use_rewrites
@@ -78,6 +82,10 @@
 #   ood_portal.yml auth_type
 # @param auth_configs
 #   ood_portal.yml auth_configs
+# @param custom_vhost_directives
+#   ood_portal.yml custom_vhost_directives
+# @param custom_location_directives
+#   ood_portal.yml custom_location_directives
 # @param root_uri
 #   ood_portal.yml root_uri
 # @param analytics
@@ -234,13 +242,14 @@
 #
 class openondemand (
   # repos
-  String $repo_release = '3.0',
+  String $repo_release = '3.1',
   Variant[Stdlib::HTTPSUrl, Stdlib::HTTPUrl]
   $repo_baseurl_prefix = 'https://yum.osc.edu/ondemand',
   Variant[Stdlib::HTTPSUrl, Stdlib::HTTPUrl, Stdlib::Absolutepath]
   $repo_gpgkey = 'https://yum.osc.edu/ondemand/RPM-GPG-KEY-ondemand-SHA512',
   Optional[String[1]] $repo_proxy = undef,
   Integer[1,99] $repo_priority = 99,
+  Optional[Boolean] $repo_module_hotfixes = undef,
   String $repo_exclude = 'absent',
   Boolean $manage_dependency_repos = true,
   Boolean $manage_epel = true,
@@ -264,6 +273,7 @@ class openondemand (
   Optional[String] $servername = undef,
   Optional[Array] $server_aliases = undef,
   Optional[Array] $ssl = undef,
+  Boolean $disable_logs = false,
   String  $logroot = 'logs',
   Boolean $use_rewrites = true,
   Boolean $use_maintenance = true,
@@ -280,6 +290,8 @@ class openondemand (
   Optional[String] $map_fail_uri = undef,
   Variant[Enum['CAS', 'openid-connect', 'shibboleth', 'dex'], String[1]] $auth_type = 'dex',
   Optional[Array] $auth_configs = undef,
+  Array $custom_vhost_directives = [],
+  Array $custom_location_directives = [],
   String $root_uri = '/pun/sys/dashboard',
   Optional[Struct[{ url => String, id => String }]] $analytics = undef,
   String $public_uri = '/public',
@@ -381,10 +393,25 @@ class openondemand (
   $osname = $facts.dig('os', 'name')
   $osmajor = $facts.dig('os', 'release', 'major')
 
-  $supported = ['RedHat-7','RedHat-8','RedHat-9','Debian-20.04','Debian-22.04']
+  $supported = ['RedHat-7','RedHat-8','RedHat-9','RedHat-2023','Debian-20.04','Debian-22.04','Debian-12']
   $os = "${osfamily}-${osmajor}"
   if ! ($os in $supported) {
     fail("Unsupported OS: module ${module_name}. osfamily=${osfamily} osmajor=${osmajor} detected")
+  }
+
+  # Handle unsupported distro and OnDemand combos
+  if $repo_release == '3.1' {
+    if "${osfamily}-${osmajor}" == 'RedHat-7' {
+      fail('EL7 is not supported with OnDemand 3.1')
+    }
+  }
+  if $repo_release == '3.0' {
+    if "${osname}-${osmajor}" == 'Amazon-2023' {
+      fail('Amazon 2023 is not supported with OnDemand 3.0')
+    }
+    if "${osname}-${osmajor}" == 'Debian-12' {
+      fail('Debian 12 is not supported with OnDemand 3.0')
+    }
   }
 
   if versioncmp($osmajor, '7') <= 0 {
@@ -393,15 +420,35 @@ class openondemand (
     $scl_apache = false
   }
 
+  # EL9 only has these two versions at this time
+  if $repo_release == '3.0' and "${osfamily}-${osmajor}" == 'RedHat-9' {
+    $nodejs = 'absent'
+    $ruby = 'absent'
+  } elsif $repo_release == '3.0' {
+    $nodejs = '14'
+    $ruby = '3.0'
+  } else {
+    $nodejs = '18'
+    $ruby = '3.1'
+  }
+
   if $selinux {
     $selinux_package_ensure = $ondemand_package_ensure
   } else {
     $selinux_package_ensure = 'absent'
   }
 
+  if $facts['os']['name'] == 'Amazon' {
+    $dist = 'amzn'
+  } elsif $osfamily == 'RedHat' {
+    $dist = 'el'
+  } else {
+    $dist = undef
+  }
+
   if $osfamily == 'RedHat' {
-    $repo_baseurl = "${repo_baseurl_prefix}/${repo_release}/web/el${osmajor}/\$basearch"
-    $repo_nightly_baseurl = "${repo_baseurl_prefix}/nightly/web/el${osmajor}/\$basearch"
+    $repo_baseurl = "${repo_baseurl_prefix}/${repo_release}/web/${dist}${osmajor}/\$basearch"
+    $repo_nightly_baseurl = "${repo_baseurl_prefix}/nightly/web/${dist}${osmajor}/\$basearch"
   } elsif $osfamily == 'Debian' {
     $repo_baseurl = "${repo_baseurl_prefix}/${repo_release}/web/apt"
     $repo_nightly_baseurl = "${repo_baseurl_prefix}/nightly/web/apt"
@@ -477,6 +524,7 @@ class openondemand (
     'server_aliases'                   => $server_aliases,
     'port'                             => $port,
     'ssl'                              => $ssl,
+    'disable_logs'                     => $disable_logs,
     'logroot'                          => $logroot,
     'use_rewrites'                     => $use_rewrites,
     'use_maintenance'                  => $use_maintenance,
@@ -491,6 +539,8 @@ class openondemand (
     'map_fail_uri'                     => $map_fail_uri,
     'pun_stage_cmd'                    => $pun_stage_cmd,
     'auth'                             => $auth,
+    'custom_vhost_directives'          => $custom_vhost_directives,
+    'custom_location_directives'       => $custom_location_directives,
     'root_uri'                         => $root_uri,
     'analytics'                        => $analytics,
     'public_uri'                       => $public_uri,
@@ -544,7 +594,8 @@ class openondemand (
   if $osfamily == 'RedHat' {
     contain openondemand::repo::rpm
     Class['openondemand::repo::rpm'] -> Class['openondemand::install']
-  } elsif $osfamily == 'Debian' {
+  }
+  if $osfamily == 'Debian' {
     contain openondemand::repo::apt
     Class['openondemand::repo::apt'] -> Class['openondemand::install']
   }
