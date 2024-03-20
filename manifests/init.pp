@@ -255,11 +255,11 @@ class openondemand (
   Optional[Boolean] $repo_module_hotfixes = undef,
   String $repo_exclude = 'absent',
   Boolean $manage_dependency_repos = true,
-  Boolean $manage_epel = true,
+  Boolean $manage_epel = false,
   Boolean $repo_nightly = false,
 
   # sudo 
-  Boolean $manage_sudo = true,
+  Boolean $manage_sudo = false,
 
   # packages
   Boolean $selinux = false,
