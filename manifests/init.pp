@@ -239,7 +239,10 @@
 #   Path to the source for public files
 # @param manage_logrotate
 #   Boolean that allows disabling management of logrotate
+# @param manage_sudo
+#   Boolean that allows disabling management of sudo 
 #
+
 class openondemand (
   # repos
   String $repo_release = '3.1',
@@ -254,6 +257,9 @@ class openondemand (
   Boolean $manage_dependency_repos = true,
   Boolean $manage_epel = true,
   Boolean $repo_nightly = false,
+
+  # sudo 
+  Boolean $manage_sudo = true,
 
   # packages
   Boolean $selinux = false,

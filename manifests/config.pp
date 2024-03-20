@@ -323,9 +323,11 @@ class openondemand::config {
     content => template('openondemand/profile.erb'),
   }
 
-  sudo::conf { 'ood':
-    content        => template('openondemand/sudo.erb'),
-    sudo_file_name => 'ood',
+  if $openondemand::manage_sudo {
+    sudo::conf { 'ood':
+      content        => template('openondemand/sudo.erb'),
+      sudo_file_name => 'ood',
+    }
   }
 
   file { '/etc/cron.d/ood':

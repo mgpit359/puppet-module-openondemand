@@ -10,9 +10,10 @@ class openondemand::install {
 
   # Ensure changes to packaged sudo files and produced rpmnew
   # Are deleted in idempotent way
-  include sudo
-  Package['ondemand'] -> Class['sudo']
-
+  if $openondemand::manage_sudo {
+    include sudo
+    Package['ondemand'] -> Class['sudo']
+  }
   package { 'ondemand-selinux':
     ensure => $openondemand::selinux_package_ensure,
   }
